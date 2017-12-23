@@ -1,0 +1,63 @@
+name: DevotedPlugin
+version: 0.1
+author: Devotedworker
+main: com.devotedworker.plugin.DevotedPlugin
+commands:
+  test:
+    description: E
+    usage: E
+depend: [WorldEdit]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

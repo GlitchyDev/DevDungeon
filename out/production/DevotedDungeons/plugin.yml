@@ -1,0 +1,66 @@
+name: DevotedDungeon
+version: 0.1
+author: Devotedworker
+main: com.devotedworker.plugin.DevotedPlugin
+commands:
+  test:
+    description: E
+    usage: E
+  generate:
+    description: Generates the specified Structure
+    usage: /DevotedDungeons generate <Dungeon> <Args>
+depend: [WorldEdit]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

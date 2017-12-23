@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Item-NBT-API">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../SpigotServer/Item-NBT-API.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
