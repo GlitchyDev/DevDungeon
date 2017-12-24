@@ -13,8 +13,7 @@ public class Main {
         System.out.println("Dungeon Generation");
         long generationStartTime = System.currentTimeMillis();
         File file = new File("Test.png");
-        Dungeon dungeon = new Dungeon(10,10
-                ,1);
+        Dungeon dungeon = new Dungeon(10,10,1);
         long generationEndTime = System.currentTimeMillis();
         try {
             ImageIO.write(DungeonDisplay.generateDisplay(dungeon),"PNG",file);

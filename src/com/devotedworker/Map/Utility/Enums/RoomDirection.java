@@ -9,8 +9,7 @@ public enum RoomDirection {
     SOUTH,
     WEST,
     UP,
-    DOWN,
-    NONE;
+    DOWN;
 
     public boolean isVertical()
     {
