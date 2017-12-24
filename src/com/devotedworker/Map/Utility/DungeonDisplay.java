@@ -3,7 +3,6 @@ package com.devotedworker.Map.Utility;
 import com.devotedworker.Map.Dungeon;
 import com.devotedworker.Map.Rooms.AbstractRoom;
 import com.devotedworker.Map.Rooms.HallwayRoom;
-import com.devotedworker.Map.Utility.Enums.RoomDirection;
 import com.devotedworker.Map.Utility.Enums.RoomType;
 
 import java.awt.*;
@@ -119,10 +118,9 @@ public class DungeonDisplay {
         if(room.getRoomType() == RoomType.HALLWAY)
         {
             HallwayRoom hallwayRoom = (HallwayRoom) room;
-            for(RoomDirection direction: hallwayRoom.getConnectedRooms().keySet())
-            {
+            if(hallwayRoom.getConnectionDirection() != null) {
                 g.setPaint(Color.YELLOW);
-                switch (direction) {
+                switch (hallwayRoom.getConnectionDirection()) {
                     case NORTH:
                         g.fillRect(baseX + 2, baseY + 1, 1, 1);
                         break;
@@ -139,14 +137,9 @@ public class DungeonDisplay {
                         g.setPaint(Color.BLUE);
                         g.fillRect(baseX + 2, baseY + 2, 1, 1);
                         break;
-                    case NONE:
-                        g.setPaint(Color.BLACK);
-                        g.fillRect(baseX + 2, baseY + 2, 1, 1);
-                        break;
                 }
             }
         }
-
 
 
 
