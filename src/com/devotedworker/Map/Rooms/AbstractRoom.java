@@ -1,6 +1,7 @@
 package com.devotedworker.Map.Rooms;
 
 import com.devotedworker.Map.Dungeon;
+import com.devotedworker.Map.Utility.Enums.RoomDirection;
 import com.devotedworker.Map.Utility.Enums.RoomType;
 import com.devotedworker.Map.Utility.RoomLocation;
 import com.devotedworker.Map.Utility.RoomOrientation;
