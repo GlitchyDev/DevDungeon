@@ -1,10 +1,9 @@
-package com.devotedworker.Map;
+package com.devotedworker.GenerationMap;
 
-import com.devotedworker.Map.Generators.BigRoomGenerator;
-import com.devotedworker.Map.Generators.HallwayRoomGenerator;
-import com.devotedworker.Map.Rooms.AbstractRoom;
-import com.devotedworker.Map.Rooms.HallwayRoom;
-import com.devotedworker.Map.Utility.RoomLocation;
+import com.devotedworker.GenerationMap.Generators.BigRoomGenerator;
+import com.devotedworker.GenerationMap.Generators.HallwayRoomGenerator;
+import com.devotedworker.GenerationMap.Rooms.AbstractRoom;
+import com.devotedworker.GenerationMap.Utility.RoomLocation;
 
 import java.util.Random;
 
@@ -17,22 +16,21 @@ public class Dungeon {
     // Y -> X -> Z
 
     public Dungeon(int width, int length, int height) {
-        this.width = width;
-        this.length = length;
-        this.height = height;
-        rooms = new AbstractRoom[width][length][height];
-        Random random = new Random();
-        BigRoomGenerator.generateRooms(this, random);
-        HallwayRoomGenerator.generateRooms(this, random);
+        generate(width,length,height, new Random());
     }
     public Dungeon(int width, int length, int height, long seed) {
+        generate(width,length,height, new Random(seed));
+    }
+
+    public void generate(int width, int length, int height, Random random)
+    {
         this.width = width;
         this.length = length;
         this.height = height;
         rooms = new AbstractRoom[width][length][height];
-        Random random = new Random(seed);
         BigRoomGenerator.generateRooms(this, random);
         HallwayRoomGenerator.generateRooms(this, random);
+        BigRoomGenerator.fixRooms(this,random);
     }
 
     public AbstractRoom getRoom(RoomLocation location)

@@ -1,22 +1,16 @@
 package com.devotedworker.plugin;
 
 
-import com.devotedworker.Map.Dungeon;
-import com.devotedworker.Map.Utility.DungeonDisplay;
+import com.devotedworker.GenerationMap.Dungeon;
+import com.devotedworker.GenerationMap.Utility.DungeonDisplay;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import com.sk89q.worldedit.*;
 import com.sk89q.worldedit.bukkit.BukkitWorld;
-import com.sk89q.worldedit.bukkit.WorldEditPlugin;
-import com.sk89q.worldedit.extent.clipboard.io.ClipboardFormat;
-import com.sk89q.worldedit.math.transform.Transform;
 import com.sk89q.worldedit.schematic.SchematicFormat;
-import com.sk89q.worldedit.world.DataException;
 import com.sk89q.worldedit.world.World;
-import de.tr7zw.itemnbtapi.*;
 import net.minecraft.server.v1_12_R1.BlockPosition;
 import net.minecraft.server.v1_12_R1.TileEntitySkull;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.SkullType;
@@ -27,14 +21,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.craftbukkit.v1_12_R1.CraftWorld;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.map.MapView;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;

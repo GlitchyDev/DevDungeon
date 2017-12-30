@@ -1,9 +1,9 @@
-package com.devotedworker.Map.Utility;
+package com.devotedworker.GenerationMap.Utility;
 
-import com.devotedworker.Map.Dungeon;
-import com.devotedworker.Map.Rooms.AbstractRoom;
-import com.devotedworker.Map.Rooms.HallwayRoom;
-import com.devotedworker.Map.Utility.Enums.RoomType;
+import com.devotedworker.GenerationMap.Dungeon;
+import com.devotedworker.GenerationMap.Rooms.AbstractRoom;
+import com.devotedworker.GenerationMap.Rooms.HallwayRoom;
+import com.devotedworker.GenerationMap.Utility.Enums.RoomType;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -35,7 +35,8 @@ public class DungeonDisplay {
             }
             if(y != 0)
             {
-                //g.fillRect(0,y*dungeon.getLength()*pixelRoomSize,dungeon.getWidth()*pixelRoomSize,pixelFloorSeperaterWidth);
+                g.setPaint(Color.YELLOW);
+                g.fillRect(0,y*dungeon.getLength()*pixelRoomSize + (y-1)*pixelRoomSize,dungeon.getWidth()*pixelRoomSize,pixelFloorSeperaterWidth);
             }
         }
 
@@ -72,22 +73,20 @@ public class DungeonDisplay {
 
         switch(room.getRoomOrientation().getConnectNorth())
         {
-            case ABSOLUTE_WALL:
+            case WALL:
                 g.fillRect(baseX,baseY,pixelRoomSize,1);
                 break;
-            case POSSIBLE_ENTRANCE:
-            case ABSOLUTE_ENTRANCE:
+            case ENTRANCE:
                 g.fillRect(baseX,baseY,2,1);
                 g.fillRect(baseX + (pixelRoomSize-2),baseY,2,1);
                 break;
         }
         switch(room.getRoomOrientation().getConnectEast())
         {
-            case ABSOLUTE_WALL:
+            case WALL:
                 g.fillRect(baseX+(pixelRoomSize-1),baseY,1,pixelRoomSize);
                 break;
-            case POSSIBLE_ENTRANCE:
-            case ABSOLUTE_ENTRANCE:
+            case ENTRANCE:
                 g.fillRect(baseX+(pixelRoomSize-1),baseY,1,2);
                 g.fillRect(baseX+(pixelRoomSize-1),baseY + (pixelRoomSize-2),1,2);
                 break;
@@ -95,22 +94,20 @@ public class DungeonDisplay {
 
         switch(room.getRoomOrientation().getConnectSouth())
         {
-            case ABSOLUTE_WALL:
+            case WALL:
                 g.fillRect(baseX,baseY + (pixelRoomSize-1),pixelRoomSize,1);
                 break;
-            case POSSIBLE_ENTRANCE:
-            case ABSOLUTE_ENTRANCE:
+            case ENTRANCE:
                 g.fillRect(baseX,baseY + (pixelRoomSize-1),2,1);
                 g.fillRect(baseX + (pixelRoomSize-2),baseY + (pixelRoomSize-1),2,1);
                 break;
         }
         switch(room.getRoomOrientation().getConnectWest())
         {
-            case ABSOLUTE_WALL:
+            case WALL:
                 g.fillRect(baseX,baseY,1,pixelRoomSize);
                 break;
-            case POSSIBLE_ENTRANCE:
-            case ABSOLUTE_ENTRANCE:
+            case ENTRANCE:
                 g.fillRect(baseX,baseY,1,2);
                 g.fillRect(baseX,baseY + (pixelRoomSize-2),1,2);
                 break;
@@ -118,6 +115,7 @@ public class DungeonDisplay {
         if(room.getRoomType() == RoomType.HALLWAY)
         {
             HallwayRoom hallwayRoom = (HallwayRoom) room;
+            /*
             if(hallwayRoom.getConnectionDirection() != null) {
                 g.setPaint(Color.YELLOW);
                 switch (hallwayRoom.getConnectionDirection()) {
@@ -139,6 +137,7 @@ public class DungeonDisplay {
                         break;
                 }
             }
+            */
         }
 
 

@@ -1,7 +1,7 @@
-package com.devotedworker.Map.Utility;
+package com.devotedworker.GenerationMap.Utility;
 
-import com.devotedworker.Map.Utility.Enums.RoomConnection;
-import com.devotedworker.Map.Utility.Enums.RoomDirection;
+import com.devotedworker.GenerationMap.Utility.Enums.RoomConnection;
+import com.devotedworker.GenerationMap.Utility.Enums.RoomDirection;
 
 import java.util.ArrayList;
 
@@ -19,12 +19,12 @@ public class RoomOrientation {
 
     public RoomOrientation()
     {
-        this.connectNorth = RoomConnection.ABSOLUTE_WALL;
-        this.connectEast = RoomConnection.ABSOLUTE_WALL;
-        this.connectSouth = RoomConnection.ABSOLUTE_WALL;
-        this.connectWest = RoomConnection.ABSOLUTE_WALL;
-        this.connectUp = RoomConnection.ABSOLUTE_WALL;
-        this.connectDown = RoomConnection.ABSOLUTE_WALL;
+        this.connectNorth = RoomConnection.WALL;
+        this.connectEast = RoomConnection.WALL;
+        this.connectSouth = RoomConnection.WALL;
+        this.connectWest = RoomConnection.WALL;
+        this.connectUp = RoomConnection.WALL;
+        this.connectDown = RoomConnection.WALL;
         customConnections = new ArrayList<>();
     }
 

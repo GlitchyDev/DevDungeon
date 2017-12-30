@@ -1,6 +1,6 @@
-package com.devotedworker.Map.Utility;
+package com.devotedworker.GenerationMap.Utility;
 
-import com.devotedworker.Map.Utility.Enums.RoomDirection;
+import com.devotedworker.GenerationMap.Utility.Enums.RoomDirection;
 
 public class RoomLocation {
     private int x;

@@ -1,9 +1,9 @@
-package com.devotedworker.Map.Rooms;
+package com.devotedworker.GenerationMap.Rooms;
 
-import com.devotedworker.Map.Dungeon;
-import com.devotedworker.Map.Utility.Enums.RoomType;
-import com.devotedworker.Map.Utility.RoomLocation;
-import com.devotedworker.Map.Utility.RoomOrientation;
+import com.devotedworker.GenerationMap.Dungeon;
+import com.devotedworker.GenerationMap.Utility.Enums.RoomType;
+import com.devotedworker.GenerationMap.Utility.RoomLocation;
+import com.devotedworker.GenerationMap.Utility.RoomOrientation;
 
 /**
  * A room for the purpose of Dungeon Generation

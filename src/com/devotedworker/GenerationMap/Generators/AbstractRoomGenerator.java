@@ -1,15 +1,13 @@
-package com.devotedworker.Map.Generators;
+package com.devotedworker.GenerationMap.Generators;
 
-import com.devotedworker.Map.Dungeon;
-import com.devotedworker.Map.Utility.RoomLocation;
+import com.devotedworker.GenerationMap.Dungeon;
+import com.devotedworker.GenerationMap.Utility.RoomLocation;
 
 public abstract class AbstractRoomGenerator {
 
 
     public static boolean canGenerateStructure(int width, int length, int height, int x, int z, int y, Dungeon dungeon)
     {
-
-
         for(int x1 = x; x1 < x+width; x1++)
         {
             for(int z1 = z; z1 < z+length; z1++)
@@ -24,6 +22,11 @@ public abstract class AbstractRoomGenerator {
             }
         }
         return true;
+    }
+
+    public static double getSeconds(long start, long end)
+    {
+        return (end-start)/1000.0;
     }
 
 

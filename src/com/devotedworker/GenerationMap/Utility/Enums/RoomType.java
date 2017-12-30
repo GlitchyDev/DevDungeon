@@ -1,4 +1,4 @@
-package com.devotedworker.Map.Utility.Enums;
+package com.devotedworker.GenerationMap.Utility.Enums;
 /*
 §0	Black
 §1	Dark Blue

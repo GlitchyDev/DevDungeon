@@ -1,7 +1,7 @@
-package com.devotedworker.Map.Utility.Enums;
+package com.devotedworker.GenerationMap.Utility.Enums;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Random;
 
 public enum RoomDirection {
     NORTH,
@@ -45,6 +45,21 @@ public enum RoomDirection {
         directions.add(SOUTH);
         directions.add(WEST);
         return directions;
+    }
+
+    public static RoomDirection randomDirection(Random random)
+    {
+        switch(random.nextInt(4)) {
+            case 0:
+                return NORTH;
+            case 1:
+                return EAST;
+            case 2:
+                return SOUTH;
+            case 3:
+                return WEST;
+        }
+        return NORTH;
     }
 
 }
