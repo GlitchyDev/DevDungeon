@@ -64,7 +64,7 @@ public class DungeonDisplay {
         }
         else
         {
-            g.setPaint(new Color(0.8f,0.8f,0.8f,1.0f));
+            g.setPaint(Color.WHITE.darker());
         }
         g.fillRect(baseX,baseY,pixelRoomSize,pixelRoomSize);
 
@@ -112,40 +112,5 @@ public class DungeonDisplay {
                 g.fillRect(baseX,baseY + (pixelRoomSize-2),1,2);
                 break;
         }
-        if(room.getRoomType() == RoomType.HALLWAY)
-        {
-            HallwayRoom hallwayRoom = (HallwayRoom) room;
-            /*
-            if(hallwayRoom.getConnectionDirection() != null) {
-                g.setPaint(Color.YELLOW);
-                switch (hallwayRoom.getConnectionDirection()) {
-                    case NORTH:
-                        g.fillRect(baseX + 2, baseY + 1, 1, 1);
-                        break;
-                    case EAST:
-                        g.fillRect(baseX + 3, baseY + 2, 1, 1);
-                        break;
-                    case SOUTH:
-                        g.fillRect(baseX + 2, baseY + 3, 1, 1);
-                        break;
-                    case WEST:
-                        g.fillRect(baseX + 1, baseY + 2, 1, 1);
-                        break;
-                    case UP:
-                        g.setPaint(Color.BLUE);
-                        g.fillRect(baseX + 2, baseY + 2, 1, 1);
-                        break;
-                }
-            }
-            */
-        }
-
-
-
-
-
     }
-
-
-
 }

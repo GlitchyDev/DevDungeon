@@ -4,5 +4,4 @@ public enum RoomConnection {
     WALL,
     ENTRANCE,
     NONE;
-
 }

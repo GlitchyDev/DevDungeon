@@ -1,30 +1,19 @@
 package com.devotedworker;
 
+import com.devotedworker.FileIO.GenerationMapImageIO;
 import com.devotedworker.GenerationMap.Dungeon;
-import com.devotedworker.GenerationMap.Utility.DungeonDisplay;
-
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
+import com.devotedworker.plugin.DevDungeon;
 
 public class Main {
     public static void main(String[] args)
     {
-        System.out.println("Dungeon: Starting Generation");
+        DevDungeon.log("Dungeon: Starting Generation");
         long generationStartTime = System.currentTimeMillis();
-        File file = new File("Test.png");
         Dungeon dungeon = new Dungeon(50,50,5);
         long generationEndTime = System.currentTimeMillis();
-        System.out.println("Dungeon: Total Generation Time: " + getSeconds(generationStartTime,generationEndTime));
-        System.out.println("Dungeon: Start Image Write");
-        try {
-            ImageIO.write(DungeonDisplay.generateDisplay(dungeon),"PNG",file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        long imageWriteEndTime = System.currentTimeMillis();
-        System.out.println("Dungeon: Image Write Time: " + getSeconds(generationEndTime,imageWriteEndTime));
-
+        DevDungeon.log("Dungeon: Total Generation Time: " + getSeconds(generationStartTime,generationEndTime));
+        DevDungeon.log("Dungeon: Start Image Write");
+        GenerationMapImageIO.writeGenerationMapToFile(dungeon,false);
     }
 
     public static double getSeconds(long startTime, long endTime)

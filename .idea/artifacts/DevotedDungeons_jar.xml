@@ -1,12 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="DevotedDungeons:jar">
-    <output-path>$PROJECT_DIR$/../../SpigotServer/plugins</output-path>
-    <root id="archive" name="DevotedPlugin.jar">
+  <artifact type="jar" build-on-make="true" name="DevotedDungeons:jar">
+    <output-path>$PROJECT_DIR$/../../../SpigotServer/plugins</output-path>
+    <root id="archive" name="DevotedDungeons.jar">
       <element id="module-output" name="DevotedDungeons" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../SpigotServer/Item-NBT-API.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../SpigotServer/worldedit-bukkit-6.1.7.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../SpigotServer/Spigot.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../../SpigotServer/FastAsyncWorldEdit.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Spigot" />
+      <element id="library" level="project" name="worldedit-bukkit-6.1.7.3" />
+      <element id="library" level="project" name="FastAsyncWorldEdit" />
     </root>
   </artifact>
 </component>

@@ -1,14 +1,11 @@
 name: DevotedDungeon
 version: 0.1
 author: Devotedworker
-main: com.devotedworker.plugin.DevotedPlugin
+main: com.devotedworker.plugin.DevDungeon
 commands:
-  test:
-    description: E
-    usage: E
   generate:
-    description: Generates the specified Structure
-    usage: /DevotedDungeons generate <Dungeon> <Args>
+    description: Generatesa a Dungeon Generation map from the current DungeonAlgorithum
+    usage: /DevotedDungeons:generate <Int|Width> <Int|Length> <Int|Height> <Bool|Build> <*Long|Seed>
 depend: [WorldEdit]
 
 

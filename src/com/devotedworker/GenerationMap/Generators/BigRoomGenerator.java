@@ -6,6 +6,7 @@ import com.devotedworker.GenerationMap.Rooms.HallwayRoom;
 import com.devotedworker.GenerationMap.Utility.Enums.RoomConnection;
 import com.devotedworker.GenerationMap.Utility.Enums.RoomDirection;
 import com.devotedworker.GenerationMap.Utility.RoomLocation;
+import com.devotedworker.plugin.DevDungeon;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -20,7 +21,7 @@ public class BigRoomGenerator extends AbstractRoomGenerator {
     {
         int dungeonVolume = dungeon.getWidth() * dungeon.getLength() * dungeon.getHeight();
         int attemptedGenerations = (int)((dungeonVolume/100.0)*dungeonAttemptsPer100);
-        System.out.println("BigRoomGen: Attempting " + attemptedGenerations + " Generations");
+        DevDungeon.log("BigRoomGen: Attempting " + attemptedGenerations + " Generations");
 
         generatedBigRooms = new ArrayList<>();
 
@@ -52,9 +53,9 @@ public class BigRoomGenerator extends AbstractRoomGenerator {
             }
         }
         NumberFormat formatter = new DecimalFormat("#0.00");
-        System.out.println("BigRoomGen: Succeed " + generatedBigRooms.size() + " Times ( " + formatter.format((100.0/attemptedGenerations*generatedBigRooms.size())) + "% )");
+        DevDungeon.log("BigRoomGen: Succeed " + generatedBigRooms.size() + " Times ( " + formatter.format((100.0/attemptedGenerations*generatedBigRooms.size())) + "% )");
         long roomEndTime = System.currentTimeMillis();
-        System.out.println("BigRoomGen: Generate Time took " + getSeconds(roomGenerateTime,roomEndTime));
+        DevDungeon.log("BigRoomGen: Generate Time took " + getSeconds(roomGenerateTime,roomEndTime));
 
     }
 
@@ -62,7 +63,7 @@ public class BigRoomGenerator extends AbstractRoomGenerator {
     private static final int maxVariance = 4;
 
     public static void fixRooms(Dungeon dungeon, Random random) {
-        System.out.println("BigRoomFix: Starting Room Fix");
+        DevDungeon.log("BigRoomFix: Starting Room Fix");
         long fixStart = System.currentTimeMillis();
         int suggestedOpenings = minOpening + random.nextInt(maxVariance+1);
 
@@ -88,7 +89,7 @@ public class BigRoomGenerator extends AbstractRoomGenerator {
         }
 
         long fixStop = System.currentTimeMillis();
-        System.out.println("BigRoomFix: Fix Time: " + getSeconds(fixStart,fixStop));
+        DevDungeon.log("BigRoomFix: Fix Time: " + getSeconds(fixStart,fixStop));
 
 
 
