@@ -21,6 +21,10 @@ public class Dungeon {
     public Dungeon(int width, int length, int height, long seed) {
         generate(width,length,height, new Random(seed));
     }
+    public Dungeon(int width, int length, int height, Random random) {
+        generate(width,length,height,random);
+    }
+
 
     public void generate(int width, int length, int height, Random random)
     {

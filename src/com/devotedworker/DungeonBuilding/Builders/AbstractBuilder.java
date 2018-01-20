@@ -1,17 +1,14 @@
 package com.devotedworker.DungeonBuilding.Builders;
 
 import com.devotedworker.FileIO.SchematicLoader;
-import com.sk89q.worldedit.CuboidClipboard;
 import com.sk89q.worldedit.EditSession;
-import com.sk89q.worldedit.MaxChangedBlocksException;
 import com.sk89q.worldedit.Vector;
-import com.sk89q.worldedit.data.DataException;
 import com.sk89q.worldedit.extent.clipboard.Clipboard;
 import com.sk89q.worldedit.extent.clipboard.io.ClipboardFormat;
 import com.sk89q.worldedit.extent.clipboard.io.ClipboardReader;
 import com.sk89q.worldedit.function.operation.Operation;
 import com.sk89q.worldedit.function.operation.Operations;
-import com.sk89q.worldedit.schematic.SchematicFormat;
+import com.sk89q.worldedit.math.transform.AffineTransform;
 import com.sk89q.worldedit.session.ClipboardHolder;
 import com.sk89q.worldedit.world.registry.WorldData;
 import org.bukkit.Location;
@@ -66,6 +63,7 @@ public class AbstractBuilder {
     }
     */
 
+
     public static void pasteSchematic(String schematicName, EditSession buildSession, Location location, int rotation) {
 
         try {
@@ -77,6 +75,11 @@ public class AbstractBuilder {
             buildSession.enableQueue();
             buildSession.setFastMode(true);
             Vector to = translateVector(location);
+
+            AffineTransform transform = new AffineTransform();
+            transform = transform.rotateY(-rotation);
+            holder.setTransform(holder.getTransform().combine(transform));
+
             final Operation operation = holder
                     .createPaste(buildSession, worldData)
                     .to(to)
@@ -91,12 +94,13 @@ public class AbstractBuilder {
             e.printStackTrace();
         }
     }
-
-
-
-
-
 }
+
+
+
+
+
+
 
 
 

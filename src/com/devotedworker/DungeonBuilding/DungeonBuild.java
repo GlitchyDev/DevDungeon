@@ -19,12 +19,14 @@ import org.bukkit.Location;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
 
+import java.util.Random;
+
 public class DungeonBuild extends AbstractBuilder {
 
 
 
 
-    public static void buildDungeon(Dungeon dungeon, Location dungeonBaseLocation, int tickRoomBuildingDelay)
+    public static void buildDungeon(Dungeon dungeon, Random random, Location dungeonBaseLocation, int tickRoomBuildingDelay)
     {
 
         WorldEditPlugin we = (WorldEditPlugin) Bukkit.getPluginManager().getPlugin("WorldEdit");
@@ -53,12 +55,13 @@ public class DungeonBuild extends AbstractBuilder {
                     final int finalZ = z;
                     final int finalY = y;
                     final long tickDelay = (long)(delay*tickRoomBuildingDelay);
+                    final Random finalRandom = random;
 
 
                     BukkitTask task = scheduler.runTaskLater(DevDungeon.instance, new Runnable() {
                         @Override
                         public void run() {
-                            buildRoom(buildSession,finalDungeon,finalDungeonBaseLocation,finalX,finalZ,finalY);
+                            buildRoom(buildSession,finalRandom,finalDungeon,finalDungeonBaseLocation,finalX,finalZ,finalY);
                         }
                     }, tickDelay);
                     delay++;
@@ -68,16 +71,16 @@ public class DungeonBuild extends AbstractBuilder {
 
     }
 
-    public static void buildRoom( EditSession buildSession,Dungeon dungeon, Location dungeonBaseLocation, int x, int z, int y)
+    public static void buildRoom(EditSession buildSession , Random random, Dungeon dungeon, Location dungeonBaseLocation, int x, int z, int y)
     {
         Location roomBaseLocation = dungeonBaseLocation.clone().add(x * DefaultRoomSize.defaultRoomWidth, y * DefaultRoomSize.defaultRoomHeight, z *DefaultRoomSize.defaultRoomLength);
         switch(dungeon.getRoom(new RoomLocation(x,z,y)).getRoomType())
         {
             case HALLWAY:
-                HallwayBuilder.buildRoom(buildSession,roomBaseLocation,dungeon,x,z,y);
+                HallwayBuilder.buildRoom(buildSession, random, roomBaseLocation,dungeon,x,z,y);
                 break;
             case BIGROOM:
-                BigRoomBuilder.buildRoom(buildSession,roomBaseLocation,dungeon,x,z,y);
+                BigRoomBuilder.buildRoom(buildSession, random, roomBaseLocation,dungeon,x,z,y);
                 break;
             default:
                 break;

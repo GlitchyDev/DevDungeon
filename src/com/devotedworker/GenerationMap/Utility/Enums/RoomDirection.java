@@ -1,5 +1,8 @@
 package com.devotedworker.GenerationMap.Utility.Enums;
 
+import com.devotedworker.DungeonBuilding.Enums.HallwayRoomMicroTypes;
+import com.devotedworker.DungeonBuilding.Utility.SchematicSetup;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,15 +14,12 @@ public enum RoomDirection {
     UP,
     DOWN;
 
-    public boolean isVertical()
-    {
+    public boolean isVertical() {
         return (this != UP || this != DOWN);
     }
 
-    public RoomDirection reverse()
-    {
-        switch(this)
-        {
+    public RoomDirection reverse() {
+        switch (this) {
             case NORTH:
                 return SOUTH;
             case EAST:
@@ -37,8 +37,7 @@ public enum RoomDirection {
         }
     }
 
-    public static ArrayList<RoomDirection> getFloorRoomDirections()
-    {
+    public static ArrayList<RoomDirection> getFloorRoomDirections() {
         ArrayList<RoomDirection> directions = new ArrayList<>();
         directions.add(NORTH);
         directions.add(EAST);
@@ -47,9 +46,8 @@ public enum RoomDirection {
         return directions;
     }
 
-    public static RoomDirection randomDirection(Random random)
-    {
-        switch(random.nextInt(4)) {
+    public static RoomDirection randomDirection(Random random) {
+        switch (random.nextInt(4)) {
             case 0:
                 return NORTH;
             case 1:
@@ -61,5 +59,20 @@ public enum RoomDirection {
         }
         return NORTH;
     }
+
+    public int getRotation() {
+        switch (this) {
+            case NORTH:
+                return 0;
+            case EAST:
+                return 90;
+            case SOUTH:
+                return 180;
+            case WEST:
+                return 270;
+        }
+        return 0;
+    }
+
 
 }

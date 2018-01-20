@@ -14,6 +14,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Random;
+
 public class DevDungeon extends JavaPlugin {
     public static DevDungeon instance;
     private FileConfiguration config = getConfig();
@@ -46,7 +48,8 @@ public class DevDungeon extends JavaPlugin {
 
             if(args.length == 6)
             {
-                Dungeon dungeon = new Dungeon(Integer.valueOf(args[0]), Integer.valueOf(args[1]), Integer.valueOf(args[2]), Long.valueOf(args[4]));
+                Random random = new Random(Long.valueOf(args[4]));
+                Dungeon dungeon = new Dungeon(Integer.valueOf(args[0]), Integer.valueOf(args[1]), Integer.valueOf(args[2]), random);
 
 
                 if(args[3].toUpperCase().contains("T"))
@@ -67,7 +70,7 @@ public class DevDungeon extends JavaPlugin {
                     }
 
 
-                    DungeonBuild.buildDungeon(dungeon, location,Integer.valueOf(args[5]));
+                    DungeonBuild.buildDungeon(dungeon, random, location,Integer.valueOf(args[5]));
 
 
                 }

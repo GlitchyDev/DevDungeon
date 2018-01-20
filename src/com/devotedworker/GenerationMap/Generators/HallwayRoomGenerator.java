@@ -8,12 +8,7 @@ import com.devotedworker.GenerationMap.Utility.Enums.RoomType;
 import com.devotedworker.GenerationMap.Utility.RoomLocation;
 import com.devotedworker.plugin.DevDungeon;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Random;
-
-
+import java.util.*;
 
 
 public class HallwayRoomGenerator extends AbstractRoomGenerator {
@@ -55,30 +50,42 @@ public class HallwayRoomGenerator extends AbstractRoomGenerator {
 
         for(HallwayRoom room: generatedHallwayRooms)
         {
-            HashMap<RoomDirection, HallwayRoom> potentialRooms = room.findPotentialConnections(dungeon);
-            if(potentialRooms.size() != 0)
+            checkRoom(dungeon,room,random,roomTrees);
+        }
+        while(roomTrees.size() != dungeon.getHeight())
+        {
+            Collections.shuffle(generatedHallwayRooms,random);
+            for(HallwayRoom room: generatedHallwayRooms)
             {
-                RoomDirection selectedDirection = (RoomDirection) potentialRooms.keySet().toArray()[random.nextInt(potentialRooms.size())];
-                HallwayRoom selectedRoom = potentialRooms.get(selectedDirection);
-                int primaryID = room.getRoomID();
-                int secondaryID = selectedRoom.getRoomID();
-                room.getRoomOrientation().setDirectionConnection(selectedDirection, RoomConnection.ENTRANCE);
-                selectedRoom.getRoomOrientation().setDirectionConnection(selectedDirection.reverse(),RoomConnection.ENTRANCE);
-
-                for(HallwayRoom adjustedRooms: roomTrees.get(secondaryID))
-                {
-                    adjustedRooms.setRoomID(primaryID);
-                }
-                roomTrees.get(primaryID).addAll(roomTrees.get(secondaryID));
-                roomTrees.remove(secondaryID);
-
-
+                checkRoom(dungeon,room,random,roomTrees);
             }
         }
 
         long generationEndTime = System.currentTimeMillis();
         DevDungeon.log("HallRoomGen: Arranging Time : " + getSeconds(assigningTime,generationEndTime));
+        DevDungeon.log("HallRoomGen: Errors : " + roomTrees.size() + ":" + dungeon.getHeight());
 
+    }
+
+    public static void checkRoom(Dungeon dungeon, HallwayRoom room, Random random, HashMap<Integer,ArrayList<HallwayRoom>> roomTrees)
+    {
+        HashMap<RoomDirection, HallwayRoom> potentialRooms = room.findPotentialConnections(dungeon);
+        if(potentialRooms.size() != 0)
+        {
+            RoomDirection selectedDirection = (RoomDirection) potentialRooms.keySet().toArray()[random.nextInt(potentialRooms.size())];
+            HallwayRoom selectedRoom = potentialRooms.get(selectedDirection);
+            int primaryID = room.getRoomID();
+            int secondaryID = selectedRoom.getRoomID();
+            room.getRoomOrientation().setDirectionConnection(selectedDirection, RoomConnection.ENTRANCE);
+            selectedRoom.getRoomOrientation().setDirectionConnection(selectedDirection.reverse(),RoomConnection.ENTRANCE);
+
+            for(HallwayRoom adjustedRooms: roomTrees.get(secondaryID))
+            {
+                adjustedRooms.setRoomID(primaryID);
+            }
+            roomTrees.get(primaryID).addAll(roomTrees.get(secondaryID));
+            roomTrees.remove(secondaryID);
+        }
     }
 }
 

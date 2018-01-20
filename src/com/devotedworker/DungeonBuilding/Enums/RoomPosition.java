@@ -1,7 +1,10 @@
 package com.devotedworker.DungeonBuilding.Enums;
 
+import com.devotedworker.GenerationMap.Rooms.HallwayRoom;
 import com.devotedworker.GenerationMap.Utility.Enums.RoomDirection;
 import org.bukkit.Location;
+
+import java.util.ArrayList;
 
 public enum RoomPosition {
     NORTH,
@@ -17,6 +20,26 @@ public enum RoomPosition {
     public boolean isDiagnal()
     {
         return this == NORTH_EAST || this == NORTH_WEST || this == SOUTH_EAST || this == SOUTH_WEST;
+    }
+
+    public static ArrayList<RoomPosition> getCardinalDirections()
+    {
+        ArrayList<RoomPosition> directions = new ArrayList<>();
+        directions.add(NORTH);
+        directions.add(EAST);
+        directions.add(SOUTH);
+        directions.add(WEST);
+        return directions;
+    }
+
+    public static ArrayList<RoomPosition> getDiagnalDirections()
+    {
+        ArrayList<RoomPosition> directions = new ArrayList<>();
+        directions.add(NORTH_EAST);
+        directions.add(NORTH_WEST);
+        directions.add(SOUTH_EAST);
+        directions.add(SOUTH_WEST);
+        return directions;
     }
 
     public static Location getLocationOffset(Location location, RoomPosition roomPostion)
@@ -117,5 +140,22 @@ public enum RoomPosition {
                 return RoomDirection.NORTH;
         }
     }
+
+    public boolean isCornerVisible(HallwayRoom room)
+    {
+        switch(this)
+        {
+            case NORTH_EAST:
+                return room.getRoomOrientation().getDirectionConnection(RoomDirection.NORTH).isOpen() && room.getRoomOrientation().getDirectionConnection(RoomDirection.EAST).isOpen();
+            case NORTH_WEST:
+                return room.getRoomOrientation().getDirectionConnection(RoomDirection.NORTH).isOpen() && room.getRoomOrientation().getDirectionConnection(RoomDirection.WEST).isOpen();
+            case SOUTH_EAST:
+                return room.getRoomOrientation().getDirectionConnection(RoomDirection.SOUTH).isOpen() && room.getRoomOrientation().getDirectionConnection(RoomDirection.EAST).isOpen();
+            case SOUTH_WEST:
+                return room.getRoomOrientation().getDirectionConnection(RoomDirection.SOUTH).isOpen() && room.getRoomOrientation().getDirectionConnection(RoomDirection.WEST).isOpen();
+        }
+        return false;
+    }
+
 
 }
