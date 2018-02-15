@@ -4,6 +4,9 @@ import com.devotedworker.FileIO.GenerationMapImageIO;
 import com.devotedworker.GenerationMap.Dungeon;
 import com.devotedworker.plugin.DevDungeon;
 
+/**
+ * Should be able to run a GenerationMap for testing purposes
+ */
 public class Main {
     public static void main(String[] args)
     {

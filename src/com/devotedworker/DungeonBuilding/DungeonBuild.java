@@ -10,6 +10,7 @@ import com.devotedworker.plugin.DevDungeon;
 import com.sk89q.worldedit.EditSession;
 import com.sk89q.worldedit.LocalWorld;
 import com.sk89q.worldedit.MaxChangedBlocksException;
+import com.sk89q.worldedit.Vector;
 import com.sk89q.worldedit.blocks.BaseBlock;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.regions.CuboidRegion;
@@ -21,7 +22,11 @@ import org.bukkit.scheduler.BukkitTask;
 
 import java.util.Random;
 
-public class DungeonBuild extends AbstractBuilder {
+/**
+ * When this object is provided a GenerationMap, it will build the Dungeon using the appropriate builders.
+ * In the future, Room Objects should be able to natively provide their Build Object, and purposeful generation will not be required
+ */
+public class DungeonBuild {
 
 
 
@@ -106,6 +111,9 @@ public class DungeonBuild extends AbstractBuilder {
 
     }
 
+    public static Vector translateVector(Location location) {
+        return new Vector(location.getX(), location.getY(), location.getZ());
+    }
 
 
 }

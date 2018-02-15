@@ -3,9 +3,24 @@ package com.devotedworker.GenerationMap.Generators;
 import com.devotedworker.GenerationMap.Dungeon;
 import com.devotedworker.GenerationMap.Utility.RoomLocation;
 
+/**
+ * This generates rooms of the specified type onto a Generation Map
+ * In the future, a Event hookin should allow this to be rebased as a non static object, with a building priority queue
+ */
 public abstract class AbstractRoomGenerator {
 
 
+    /**
+     * Verifies that a room can be built in that Location.
+     * @param width
+     * @param length
+     * @param height
+     * @param x
+     * @param z
+     * @param y
+     * @param dungeon
+     * @return
+     */
     public static boolean canGenerateStructure(int width, int length, int height, int x, int z, int y, Dungeon dungeon)
     {
         for(int x1 = x; x1 < x+width; x1++)

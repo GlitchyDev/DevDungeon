@@ -5,6 +5,9 @@ import com.devotedworker.plugin.DevDungeon;
 import java.io.File;
 import java.util.HashMap;
 
+/**
+ * Loads Schematics into Memory for the builder
+ */
 public class SchematicLoader {
     private static HashMap<String,File> schematics = new HashMap<>();
 

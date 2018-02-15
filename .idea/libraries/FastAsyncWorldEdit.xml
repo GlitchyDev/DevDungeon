@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="FastAsyncWorldEdit">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../SpigotServer/FastAsyncWorldEdit.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../SpigotServer/FastAsyncWorldEdit.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

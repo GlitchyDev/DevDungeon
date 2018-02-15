@@ -16,6 +16,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Random;
 
+/**
+ * Minecraft Implementation of the Dungeon Generator.
+ * Should function as a stand in interface to allow the creation of a GenerationMap, and usage of Builders
+ * Should be able to efficiently place blocks, and keep track of generation modules
+ */
 public class DevDungeon extends JavaPlugin {
     public static DevDungeon instance;
     private FileConfiguration config = getConfig();

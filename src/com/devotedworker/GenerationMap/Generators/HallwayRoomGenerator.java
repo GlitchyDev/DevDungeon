@@ -14,6 +14,11 @@ import java.util.*;
 public class HallwayRoomGenerator extends AbstractRoomGenerator {
 
 
+    /**
+     * Generates the Dungeons Rooms
+     * @param dungeon
+     * @param random
+     */
     public static void generateRooms(Dungeon dungeon, Random random)
     {
         DevDungeon.log("HallRoomGen: Filling Hallways");
