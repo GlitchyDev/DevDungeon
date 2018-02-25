@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Libraries">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../SpigotServer/FastAsyncWorldEdit.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../SpigotServer/Spigot.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../SpigotServer/worldedit-bukkit-6.1.7.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../SpigotServer/Spigot.jar!/" />
+    </SOURCES>
+  </library>
+</component>

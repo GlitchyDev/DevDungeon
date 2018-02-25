@@ -20,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DevDungeon.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/devotedworker/plugin/DevDungeon.java">
+      <file leaf-file-name="AbstractRoomGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/AbstractRoomGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="83" lean-forward="false" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
+            <state relative-caret-position="255">
+              <caret line="15" column="103" lean-forward="false" selection-start-line="15" selection-start-column="103" selection-end-line="15" selection-end-column="103" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,22 +32,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DungeonBuild.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/DungeonBuild.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="26" column="132" lean-forward="false" selection-start-line="26" selection-start-column="132" selection-end-line="26" selection-end-column="132" />
+            <state relative-caret-position="272">
+              <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Builders/AbstractBuilder.java">
+      <file leaf-file-name="DungeonGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/DungeonGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="464">
+              <caret line="49" column="102" lean-forward="false" selection-start-line="49" selection-start-column="102" selection-end-line="49" selection-end-column="102" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BigRoom.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Rooms/BigRoom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,32 +67,11 @@
       <file leaf-file-name="GenerationMapImageIO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/devotedworker/FileIO/GenerationMapImageIO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="57" lean-forward="false" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+            <state relative-caret-position="-6">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
-                <element signature="e#1197#1198#0" expanded="true" />
-                <element signature="e#1248#1249#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SchematicLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/devotedworker/FileIO/SchematicLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="47" lean-forward="false" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BigRoomBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Builders/BigRoomBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -111,38 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/HallwayGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Utility/RoomGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Old/DevotedPlugin.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Generators/HallwayGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/plugin/DevotedPlugin.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Rooms/AbstractRoom.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Generators/RoomGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Generators/AbstractGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Utility/Enums/RoomType.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Utility/RoomLocation.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Utility/Enums/RoomConnection.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Utility/RoomOrientation.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Generators/AbstractRoomGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Utility/DungeonDisplay.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Rooms/HallwayRoom.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Dungeon.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Utility/Enums/RoomDirection.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Generators/HallwayRoomGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Rooms/BigRoom.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Map/Generators/BigRoomGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Generators/BigRoomGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/plugin/DevPlugin.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/DefaultRoomSize.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/DefaultRoomSize.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/BigRoomBuilder.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Enums/RoomRegion.java" />
-        <option value="$PROJECT_DIR$/src/plugin.yml" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/HallwayBuilder.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/AbstractBuilder.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Utility/DefaultRoomSize.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/ColorGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/Enums/RoomType.java" />
         <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Rooms/HallwayRoom.java" />
         <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/DungeonDisplay.java" />
         <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Rooms/TreasureRoom.java" />
@@ -156,16 +115,48 @@
         <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Dungeon.java" />
         <option value="$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Builders/HallwayBuilder.java" />
         <option value="$PROJECT_DIR$/src/com/devotedworker/plugin/DevDungeon.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/Main.java" />
         <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Generators/HallwayRoomGenerator.java" />
         <option value="$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Generators/AbstractRoomGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/devotedworker/FileIO/GenerationMapImageIO.java" />
         <option value="$PROJECT_DIR$/src/com/devotedworker/FileIO/SchematicLoader.java" />
         <option value="$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/DungeonBuild.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Dungeon.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generator/GenerationActions.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generator/Template/AbstractTemplate.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generator/DungeonGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generator/GeneratorActions.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generator/GenActions.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generator/Templates.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generator/DungeonTemplates.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/DungeonTemplate.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/DungeonGenerationMap.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/AbstractGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/StoneBigRoomGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/StoneHallwayGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/Generators.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Generators/BigRoomGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Generators/AbstractRoomGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/GeneratorEnum.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/GenActions.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/GenAction.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/GeneratorType.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Dungeon.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/GenerationMap.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/AbstractRoomGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/plugin/DevDungeon.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/FileIO/GenerationMapImageIO.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Rooms/AbstractRoom.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Utility/RoomLocation.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Utility/RoomOrientation.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Utility/DungeonDisplay.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Rooms/HallwayRoom.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Rooms/TreasureRoom.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/DungeonGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/devotedworker/Generation/Rooms/BigRoom.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="114" />
     <option name="y" value="-8" />
     <option name="width" value="614" />
@@ -187,6 +178,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,36 +202,14 @@
               <item name="DevDungeon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="devotedworker" type="462c0819:PsiDirectoryNode" />
-              <item name="DungeonBuilding" type="462c0819:PsiDirectoryNode" />
+              <item name="Generation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DevotedDungeons" type="b2602c69:ProjectViewProjectNode" />
               <item name="DevDungeon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="devotedworker" type="462c0819:PsiDirectoryNode" />
-              <item name="DungeonBuilding" type="462c0819:PsiDirectoryNode" />
-              <item name="Builders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DevotedDungeons" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DevDungeon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="devotedworker" type="462c0819:PsiDirectoryNode" />
-              <item name="FileIO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DevotedDungeons" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DevDungeon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="devotedworker" type="462c0819:PsiDirectoryNode" />
-              <item name="GenerationMap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DevotedDungeons" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DevDungeon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="devotedworker" type="462c0819:PsiDirectoryNode" />
-              <item name="GenerationMap" type="462c0819:PsiDirectoryNode" />
+              <item name="Generation" type="462c0819:PsiDirectoryNode" />
               <item name="Generators" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -247,20 +217,43 @@
               <item name="DevDungeon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="devotedworker" type="462c0819:PsiDirectoryNode" />
+              <item name="Generation" type="462c0819:PsiDirectoryNode" />
               <item name="plugin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DevotedDungeons" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DevDungeon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="devotedworker" type="462c0819:PsiDirectoryNode" />
+              <item name="Generation" type="462c0819:PsiDirectoryNode" />
+              <item name="Rooms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DevotedDungeons" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DevDungeon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="devotedworker" type="462c0819:PsiDirectoryNode" />
+              <item name="Generation" type="462c0819:PsiDirectoryNode" />
+              <item name="Utility" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DevotedDungeons" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DevDungeon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="devotedworker" type="462c0819:PsiDirectoryNode" />
+              <item name="Old" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SpigotServer/worldedit-bukkit-6.1.7.3.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../SpigotServer/worldedit-bukkit-6.1.7.3.jar!/" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -270,10 +263,14 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Rober\Desktop\control\Java Projects\DevDungeon\src\com\devotedworker\Generation" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.devotedworker.Old" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rober\Desktop\control\Java Projects\DevDungeon\src\com\devotedworker\Generation" />
       <recent name="C:\Users\Robert\Desktop\Java Projects\DevotedPlugin\src" />
       <recent name="C:\Users\Robert\Desktop\Java Projects\DevotedPlugin" />
       <recent name="C:\Users\Robert\Desktop\Java Projects\DevotedPlugin\src\com\devotedworker\PluginMain" />
@@ -426,25 +423,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16957211" sideWeight="0.34480235" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16957211" sideWeight="0.34260616" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25673535" sideWeight="0.33235726" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25673535" sideWeight="0.5263543" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25673535" sideWeight="0.6676428" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25673535" sideWeight="0.66398245" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20058565" sideWeight="0.48979592" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20937042" sideWeight="0.48979592" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.4736457" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.4941435" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2624811" sideWeight="0.5102041" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.4941435" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -453,7 +451,6 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.47657394" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -467,167 +464,43 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/plugin/DevDungeon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/plugin/DevDungeon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Devotedworker.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Rooms/Accessability.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Rooms/Direction.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Rooms/AbstractRoom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Rooms/HallwayRoom.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/OLD_Rooms/RoomLocation.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/RoomOrientation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Dungeon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Map/Abstract.java" />
-    <entry file="file://$PROJECT_DIR$/DevotedDungeons.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/RoomLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="49" column="71" lean-forward="false" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/RoomOrientation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Rooms/AbstractRoom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../SpigotServer/FastAsyncWorldEdit.jar!/com/boydti/fawe/bukkit/BukkitCommand.class" />
-    <entry file="jar://$PROJECT_DIR$/../../SpigotServer/Spigot.jar!/org/bukkit/command/CommandExecutor.class" />
-    <entry file="jar://$PROJECT_DIR$/../../SpigotServer/Spigot.jar!/org/bukkit/plugin/java/JavaPlugin.class" />
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/DevotedPlugin.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="155" column="70" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Enums/RoomRegion.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../SpigotServer/FastAsyncWorldEdit.jar!/com/boydti/fawe/object/schematic/Schematic.class" />
-    <entry file="file://$PROJECT_DIR$/src/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Utility/DefaultRoomSize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/ColorGenerator.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/Enums/RoomType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="33" lean-forward="false" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test.png" />
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/DungeonDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Utility/DungeonDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Rooms/TreasureRoom.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Rooms/TreasureRoom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Utility/SchematicSetup.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/DungeonBuilding/Utility/SchematicSetup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Rooms/HallwayRoom.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Rooms/HallwayRoom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Rooms/BigRoom.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Rooms/BigRoom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="37" column="67" lean-forward="false" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/Enums/RoomDirection.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Utility/Enums/RoomDirection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1164">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
@@ -635,7 +508,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Utility/Enums/RoomConnection.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Utility/Enums/RoomConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
@@ -643,7 +516,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Enums/RoomPosition.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/DungeonBuilding/Enums/RoomPosition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
@@ -651,85 +524,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Dungeon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#595#596#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GenerationMap.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Enums/HallwayRoomMicroTypes.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/DungeonBuilding/Enums/HallwayRoomMicroTypes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/plugin/DevDungeon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="83" lean-forward="false" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
-          <folding>
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#906#907#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Generators/HallwayRoomGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Generators/AbstractRoomGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="119" lean-forward="false" selection-start-line="7" selection-start-column="119" selection-end-line="7" selection-end-column="119" />
-          <folding>
-            <element signature="e#1287#1288#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/GenerationMap/Generators/BigRoomGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="47" column="60" lean-forward="true" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/FileIO/GenerationMapImageIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="57" lean-forward="false" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-          <folding>
-            <element signature="e#1197#1198#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,7 +540,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Builders/BigRoomBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/DungeonBuilding/Builders/BigRoomBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
@@ -749,15 +548,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Builders/HallwayBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="162" column="21" lean-forward="false" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/Builders/AbstractBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/DungeonBuilding/Builders/AbstractBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="5" />
@@ -765,11 +556,332 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/DungeonBuilding/DungeonBuild.java">
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/DungeonBuilding/Builders/HallwayBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="818">
+          <caret line="162" column="21" lean-forward="false" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/DungeonBuilding/DungeonBuild.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="101" column="31" lean-forward="false" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generator/Template/AbstractTemplate.java" />
+    <entry file="file://$PROJECT_DIR$/GenerationMap.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/DungeonTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#309#310#0" expanded="false" />
+            <element signature="e#354#355#0" expanded="false" />
+            <element signature="e#387#388#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/StoneBigRoomGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/StoneHallwayGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Generators/BigRoomGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="47" column="60" lean-forward="false" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Generators/AbstractRoomGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Generators/HallwayRoomGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/GenAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="e#499#500#0" expanded="false" />
+            <element signature="e#553#554#0" expanded="false" />
+            <element signature="e#603#604#0" expanded="false" />
+            <element signature="e#641#642#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/GeneratorType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Rooms/AbstractRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Old/GenerationMap/Dungeon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-369">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#615#616#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/DungeonGenerationMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/Colorable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/Course3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/Courseclone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/GeometricObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/maxcircle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/Rectangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/Square.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/TestColorableSquare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/Circle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Help%3f_(Exercise_13).zip/Calender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Generators/AbstractRoomGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="103" lean-forward="false" selection-start-line="15" selection-start-column="103" selection-end-line="15" selection-end-column="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/plugin/DevDungeon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Utility/RoomLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-267">
+          <caret line="17" column="54" lean-forward="false" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/DungeonGenerationMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="26" column="132" lean-forward="false" selection-start-line="26" selection-start-column="132" selection-end-line="26" selection-end-column="132" />
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding>
+            <element signature="e#387#388#0" expanded="false" />
+            <element signature="e#450#451#0" expanded="false" />
+            <element signature="e#1190#1191#0" expanded="false" />
+            <element signature="e#1218#1219#0" expanded="false" />
+            <element signature="e#1247#1248#0" expanded="false" />
+            <element signature="e#1275#1276#0" expanded="false" />
+            <element signature="e#1305#1306#0" expanded="false" />
+            <element signature="e#1334#1335#0" expanded="false" />
+            <element signature="e#1364#1365#0" expanded="false" />
+            <element signature="e#1393#1394#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Utility/RoomOrientation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Utility/DungeonDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="55" lean-forward="false" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Rooms/HallwayRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Rooms/AbstractRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Rooms/TreasureRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/FileIO/GenerationMapImageIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/DungeonGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="49" column="102" lean-forward="false" selection-start-line="49" selection-start-column="102" selection-end-line="49" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/devotedworker/Generation/Rooms/BigRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="19" column="56" lean-forward="false" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -851,7 +963,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>worldedit-bukkit-6.1.7.3</last-edited>
+          <last-edited>Libraries</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

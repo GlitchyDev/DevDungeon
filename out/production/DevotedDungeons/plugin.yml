@@ -1,10 +1,10 @@
 name: DevotedDungeon
 version: 0.1
 author: Devotedworker
-main: com.devotedworker.plugin.DevDungeon
+main: com.devotedworker.Old.plugin.DevDungeon
 commands:
   generate:
-    description: Generatesa a Dungeon Generation map from the current DungeonAlgorithum
+    description: Generatesa a DungeonGenerationMap Generators map from the current DungeonAlgorithum
     usage: /DevotedDungeons:generate <Int|Width> <Int|Length> <Int|Height> <Bool|Build> <*Long|Seed>
 depend: [WorldEdit]
 

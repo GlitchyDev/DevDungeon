@@ -3,9 +3,6 @@
     <output-path>$PROJECT_DIR$/../../../SpigotServer/plugins</output-path>
     <root id="archive" name="DevotedDungeons.jar">
       <element id="module-output" name="DevotedDungeons" />
-      <element id="library" level="project" name="Spigot" />
-      <element id="library" level="project" name="worldedit-bukkit-6.1.7.3" />
-      <element id="library" level="project" name="FastAsyncWorldEdit" />
     </root>
   </artifact>
 </component>
