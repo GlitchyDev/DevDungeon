@@ -6,7 +6,6 @@ import com.devotedworker.Generation.Utility.Enums.RoomDirection;
 import com.devotedworker.Generation.Utility.Enums.RoomType;
 import com.devotedworker.Generation.Utility.RoomLocation;
 
-
 import java.util.HashMap;
 
 public class HallwayRoom extends AbstractRoom {

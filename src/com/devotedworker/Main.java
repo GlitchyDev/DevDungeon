@@ -1,6 +1,9 @@
 package com.devotedworker;
 
-import com.devotedworker.Generation.plugin.DevDungeon;
+import com.devotedworker.FileIO.GenerationMapImageIO;
+import com.devotedworker.Generation.DungeonGenerator;
+import com.devotedworker.Generation.DungeonTemplate;
+
 
 /**
  * Should be able to run a DungeonGenerationMap for testing purposes
@@ -8,17 +11,12 @@ import com.devotedworker.Generation.plugin.DevDungeon;
 public class Main {
     public static void main(String[] args)
     {
-        DevDungeon.log("DungeonGenerationMap: Starting Generators");
-        long generationStartTime = System.currentTimeMillis();
-        //Dungeon dungeon = new Dungeon(50,50,5);
-        long generationEndTime = System.currentTimeMillis();
-        DevDungeon.log("DungeonGenerationMap: Total Generators Time: " + getSeconds(generationStartTime,generationEndTime));
-        DevDungeon.log("DungeonGenerationMap: Start Image Write");
-        //GenerationMapImageIO.writeGenerationMapToFile(dungeon,false);
+
+        DungeonGenerator dungeonGenerator = new DungeonGenerator();
+        dungeonGenerator.generate(DungeonTemplate.STONE_DUNGEON,50,50,3);
+        GenerationMapImageIO.writeGenerationMapToFile(dungeonGenerator.getDungeonGenerationMap(),false);
+
+
     }
 
-    public static double getSeconds(long startTime, long endTime)
-    {
-        return (endTime - startTime)/1000.0;
-    }
 }

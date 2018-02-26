@@ -2,6 +2,7 @@ package com.devotedworker.FileIO;
 
 import com.devotedworker.Generation.DungeonGenerationMap;
 import com.devotedworker.Generation.Utility.DungeonDisplay;
+import com.devotedworker.Generation.Utility.PerformanceUtility;
 import com.devotedworker.Generation.plugin.DevDungeon;
 
 import javax.imageio.ImageIO;
@@ -16,8 +17,9 @@ public class GenerationMapImageIO {
 
     public static void writeGenerationMapToFile(DungeonGenerationMap generationMap, boolean isBukkitExecution)
     {
+        DevDungeon.log("DungeonGenerationMap: Start Image Write");
+        PerformanceUtility.startLogging("ImageWrite");
 
-        long imageWriteStart = System.currentTimeMillis();
         File file;
         if(isBukkitExecution) {
             file = new File(DevDungeon.getPlugin(DevDungeon.class).getDataFolder() + "/DungeonGenerationMap.png");
@@ -31,14 +33,10 @@ public class GenerationMapImageIO {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        long imageWriteEndTime = System.currentTimeMillis();
-        DevDungeon.log("DungeonGenerationMap: Image Write Time: " + getSeconds(imageWriteStart,imageWriteEndTime));
+        PerformanceUtility.endLogging("ImageWrite");
+        DevDungeon.log("DungeonGenerationMap: Image Write Time: " + PerformanceUtility.getTimings("ImageWrite"));
     }
 
-    private static double getSeconds(long startTime, long endTime)
-    {
-        return (endTime - startTime)/1000.0;
-    }
 
 
 

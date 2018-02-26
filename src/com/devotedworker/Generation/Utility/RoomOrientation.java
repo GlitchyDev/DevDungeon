@@ -3,7 +3,6 @@ package com.devotedworker.Generation.Utility;
 import com.devotedworker.Generation.Utility.Enums.RoomConnection;
 import com.devotedworker.Generation.Utility.Enums.RoomDirection;
 
-
 import java.util.ArrayList;
 
 /**

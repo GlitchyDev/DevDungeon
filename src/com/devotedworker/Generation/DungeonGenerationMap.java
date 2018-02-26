@@ -6,10 +6,7 @@ import com.devotedworker.Generation.Utility.RoomLocation;
 public class DungeonGenerationMap {
 
     private AbstractRoom[][][] rooms;
-    private int width;
-    private int length;
-    private int height;
-    // Y -> X -> Z
+    // X Z Y
 
     public DungeonGenerationMap(int width, int length, int height) {
         rooms = new AbstractRoom[width][length][height];
@@ -27,11 +24,11 @@ public class DungeonGenerationMap {
 
     public boolean doesRoomExist(RoomLocation location)
     {
-        if(location.getX() < width && location.getX() >= 0)
+        if(location.getX() < getWidth() && location.getX() >= 0)
         {
-            if(location.getZ() < length && location.getZ() >= 0)
+            if(location.getZ() < getLength() && location.getZ() >= 0)
             {
-                if(location.getY() < height && location.getY() >= 0)
+                if(location.getY() < getHeight() && location.getY() >= 0)
                 {
                     return true;
                 }
@@ -45,14 +42,14 @@ public class DungeonGenerationMap {
     }
 
     public int getWidth() {
-        return width;
+        return rooms.length;
     }
 
     public int getLength() {
-        return length;
+        return rooms[0].length;
     }
 
     public int getHeight() {
-        return height;
+        return rooms[0][0].length;
     }
 }

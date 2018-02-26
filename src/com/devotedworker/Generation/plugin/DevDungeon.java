@@ -110,4 +110,5 @@ public class DevDungeon extends JavaPlugin {
             instance.getLogger().info(string);
         }
     }
+
 }

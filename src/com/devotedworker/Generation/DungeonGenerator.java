@@ -2,6 +2,8 @@ package com.devotedworker.Generation;
 
 import com.devotedworker.Generation.Generators.AbstractRoomGenerator;
 import com.devotedworker.Generation.Generators.GeneratorType;
+import com.devotedworker.Generation.Utility.PerformanceUtility;
+import com.devotedworker.Generation.plugin.DevDungeon;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -13,8 +15,8 @@ import java.util.Random;
  * The Result should be a "DungeonMap" which can be supplied to a builder to build the "Minecraft Equivalent"
  */
 public class DungeonGenerator {
-    private GenAction[] genActions;
     private HashMap<GeneratorType,AbstractRoomGenerator> generators;
+    DungeonGenerationMap generationMap;
 
 
     /**
@@ -32,9 +34,12 @@ public class DungeonGenerator {
 
     public void generate(DungeonTemplate template, int x, int z, int y, long seed)
     {
-        generators = new HashMap<>();
+        DevDungeon.log("DungeonGenerator: Starting Generation");
+        PerformanceUtility.startLogging("DungeonGeneration");
+
         Random random = new Random(seed);
-        DungeonGenerationMap generationMap = new DungeonGenerationMap(x,z,y);
+        generators = new HashMap<>();
+        generationMap = new DungeonGenerationMap(x,z,y);
 
 
         for(GenAction action: template.getActionList())
@@ -47,7 +52,19 @@ public class DungeonGenerator {
 
         for(GenAction action: template.getActionList())
         {
-            generators.get(action.getNativeGenerator()).geneneratorActions(action,generationMap,random);
+            DevDungeon.log("DungeonGenerator: Starting Generation Action: " + action.toString());
+            PerformanceUtility.startLogging(action.toString());
+            generators.get(action.getNativeGenerator()).geneneratorActions(generationMap,generators,action,random);
+            PerformanceUtility.endLogging(action.toString());
+            DevDungeon.log("DungeonGenerator: " + action.toString() + " Generation Time: " + PerformanceUtility.getTimings(action.toString()));
         }
+
+        PerformanceUtility.endLogging("DungeonGeneration");
+        DevDungeon.log("DungeonGenerator: Total Generation Time: " + PerformanceUtility.getTimings("DungeonGeneration"));
+    }
+
+    public DungeonGenerationMap getDungeonGenerationMap()
+    {
+        return generationMap;
     }
 }
