@@ -3,7 +3,7 @@ package com.devotedworker.Generation;
 import com.devotedworker.Generation.Generators.AbstractRoomGenerator;
 import com.devotedworker.Generation.Generators.GeneratorType;
 import com.devotedworker.Generation.Utility.PerformanceUtility;
-import com.devotedworker.Generation.plugin.DevDungeon;
+import com.devotedworker.plugin.DevDungeon;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -34,7 +34,7 @@ public class DungeonGenerator {
 
     public void generate(DungeonTemplate template, int x, int z, int y, long seed)
     {
-        DevDungeon.log("DungeonGenerator: Starting Generation");
+        DevDungeon.log("DungeonGenerator: Starting Dungeon Generation using Template " + template.toString());
         PerformanceUtility.startLogging("DungeonGeneration");
 
         Random random = new Random(seed);
@@ -42,6 +42,7 @@ public class DungeonGenerator {
         generationMap = new DungeonGenerationMap(x,z,y);
 
 
+        // Setting up only the Generators needed
         for(GenAction action: template.getActionList())
         {
             if(!generators.containsKey(action.getNativeGenerator()))
@@ -50,13 +51,20 @@ public class DungeonGenerator {
             }
         }
 
+        // Completing Generation Actions, logging gross time
+        DevDungeon.log("DungeonGenerator: *********************");
+
         for(GenAction action: template.getActionList())
         {
-            DevDungeon.log("DungeonGenerator: Starting Generation Action: " + action.toString());
+            DevDungeon.log("DungeonGenerator: " + action.toString() + " Starting Generation");
+
             PerformanceUtility.startLogging(action.toString());
             generators.get(action.getNativeGenerator()).geneneratorActions(generationMap,generators,action,random);
             PerformanceUtility.endLogging(action.toString());
-            DevDungeon.log("DungeonGenerator: " + action.toString() + " Generation Time: " + PerformanceUtility.getTimings(action.toString()));
+
+            DevDungeon.log("DungeonGenerator: " + action.toString() + " Total Time: " + PerformanceUtility.getTimings(action.toString()));
+            DevDungeon.log("DungeonGenerator: *********************");
+
         }
 
         PerformanceUtility.endLogging("DungeonGeneration");

@@ -2,7 +2,8 @@ package com.devotedworker.Generation.Generators;
 
 public enum GeneratorType {
     STONEBIGROOM,
-    STONEHALLWAY;
+    STONEHALLWAY,
+    TREASUREROOM;
 
 
     public AbstractRoomGenerator getGenerator()
@@ -13,6 +14,8 @@ public enum GeneratorType {
                 return new StoneHallwayGenerator();
             case STONEBIGROOM:
                 return new StoneBigRoomGenerator();
+            case TREASUREROOM:
+                return new TreasureRoomGenerator();
             default:
                 return null;
         }

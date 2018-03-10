@@ -6,9 +6,13 @@ import com.devotedworker.Generation.Generators.GeneratorType;
  * A representation of the Actions any given Generator can make. The Actions are marked with their Native GeneratorType by Name
  */
 public enum GenAction {
-    GStoneHallway(GeneratorType.STONEHALLWAY),
-    GStoneBigRoom(GeneratorType.STONEBIGROOM),
-    FStoneBigRoom(GeneratorType.STONEBIGROOM);
+    GStoneHallway(GeneratorType.STONEHALLWAY), // Generate
+    CStoneHallway(GeneratorType.STONEHALLWAY), // Clear ( dead ends )
+
+    GStoneBigRoom(GeneratorType.STONEBIGROOM), // Generate
+    FStoneBigRoom(GeneratorType.STONEBIGROOM), // Fix
+    GTreasureRoomRoom(GeneratorType.TREASUREROOM); // Generate
+
 
     private final GeneratorType nativeGenerator;
 

@@ -1,6 +1,8 @@
 package com.devotedworker.Generation.Rooms;
 
+import com.devotedworker.Generation.Utility.Enums.RoomConnection;
 import com.devotedworker.Generation.Utility.Enums.RoomDirection;
+import com.devotedworker.Generation.Utility.Enums.RoomType;
 import com.devotedworker.Generation.Utility.RoomLocation;
 
 /**
@@ -10,18 +12,16 @@ import com.devotedworker.Generation.Utility.RoomLocation;
  */
 public class TreasureRoom extends AbstractRoom {
 
-    private RoomDirection direction;
+    private RoomDirection openingDirection;
 
     public TreasureRoom(RoomLocation roomLocation, RoomDirection direction) {
         super(roomLocation);
-        this.direction = direction;
+        roomType = RoomType.TREASUREROOM;
+        this.openingDirection = direction;
+        this.roomOrientation.setDirectionConnection(direction, RoomConnection.ENTRANCE);
     }
 
-    public RoomDirection getDirection() {
-        return direction;
-    }
-
-    public void setDirection(RoomDirection direction) {
-        this.direction = direction;
+    public RoomDirection getOpeningDirection() {
+        return openingDirection;
     }
 }

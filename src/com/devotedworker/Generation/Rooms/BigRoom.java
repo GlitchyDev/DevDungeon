@@ -9,36 +9,53 @@ import com.devotedworker.Generation.Utility.RoomLocation;
 public class BigRoom extends AbstractRoom {
 
 
-
-    public BigRoom(DungeonGenerationMap dungeonGenerationMap, RoomLocation roomLocation, int roomPos) {
+    public BigRoom(RoomLocation roomLocation, int roomPos) {
         super(roomLocation);
         roomType = RoomType.BIGROOM;
         switch(roomPos)
         {
             case 0:
-                roomOrientation.setConnectNorth(RoomConnection.WALL);
                 roomOrientation.setConnectEast(RoomConnection.NONE);
                 roomOrientation.setConnectSouth(RoomConnection.NONE);
-                roomOrientation.setConnectWest(RoomConnection.WALL);
+                roomOrientation.setConnectUp(RoomConnection.NONE);
                 break;
             case 1:
-                roomOrientation.setConnectNorth(RoomConnection.WALL);
-                roomOrientation.setConnectEast(RoomConnection.WALL);
                 roomOrientation.setConnectSouth(RoomConnection.NONE);
                 roomOrientation.setConnectWest(RoomConnection.NONE);
+                roomOrientation.setConnectUp(RoomConnection.NONE);
                 break;
             case 2:
                 roomOrientation.setConnectNorth(RoomConnection.NONE);
                 roomOrientation.setConnectEast(RoomConnection.NONE);
-                roomOrientation.setConnectSouth(RoomConnection.WALL);
-                roomOrientation.setConnectWest(RoomConnection.WALL);
+                roomOrientation.setConnectUp(RoomConnection.NONE);
                 break;
             case 3:
                 roomOrientation.setConnectNorth(RoomConnection.NONE);
-                roomOrientation.setConnectEast(RoomConnection.WALL);
-                roomOrientation.setConnectSouth(RoomConnection.WALL);
                 roomOrientation.setConnectWest(RoomConnection.NONE);
+                roomOrientation.setConnectUp(RoomConnection.NONE);
+                break;
+                // Second Floor
+            case 4:
+                roomOrientation.setConnectEast(RoomConnection.NONE);
+                roomOrientation.setConnectSouth(RoomConnection.NONE);
+                roomOrientation.setConnectDown(RoomConnection.NONE);
+                break;
+            case 5:
+                roomOrientation.setConnectSouth(RoomConnection.NONE);
+                roomOrientation.setConnectWest(RoomConnection.NONE);
+                roomOrientation.setConnectDown(RoomConnection.NONE);
+                break;
+            case 6:
+                roomOrientation.setConnectNorth(RoomConnection.NONE);
+                roomOrientation.setConnectEast(RoomConnection.NONE);
+                roomOrientation.setConnectDown(RoomConnection.NONE);
+                break;
+            case 7:
+                roomOrientation.setConnectNorth(RoomConnection.NONE);
+                roomOrientation.setConnectWest(RoomConnection.NONE);
+                roomOrientation.setConnectDown(RoomConnection.NONE);
                 break;
         }
     }
+
 }

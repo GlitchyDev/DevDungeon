@@ -13,7 +13,7 @@ public class Main {
     {
 
         DungeonGenerator dungeonGenerator = new DungeonGenerator();
-        dungeonGenerator.generate(DungeonTemplate.STONE_DUNGEON,50,50,3);
+        dungeonGenerator.generate(DungeonTemplate.STONE_DUNGEON,1000,1000,2);
         GenerationMapImageIO.writeGenerationMapToFile(dungeonGenerator.getDungeonGenerationMap(),false);
 
 

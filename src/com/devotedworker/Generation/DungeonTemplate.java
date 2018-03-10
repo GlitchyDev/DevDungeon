@@ -1,7 +1,7 @@
 package com.devotedworker.Generation;
 
 public enum DungeonTemplate {
-    STONE_DUNGEON(new GenAction[]{GenAction.GStoneBigRoom, GenAction.GStoneHallway, GenAction.FStoneBigRoom});
+    STONE_DUNGEON(new GenAction[]{GenAction.GStoneBigRoom, GenAction.GTreasureRoomRoom, GenAction.GStoneHallway, GenAction.FStoneBigRoom, GenAction.CStoneHallway});
 
 
     private GenAction[] actionList;

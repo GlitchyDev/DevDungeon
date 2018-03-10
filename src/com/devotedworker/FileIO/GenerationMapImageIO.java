@@ -3,7 +3,7 @@ package com.devotedworker.FileIO;
 import com.devotedworker.Generation.DungeonGenerationMap;
 import com.devotedworker.Generation.Utility.DungeonDisplay;
 import com.devotedworker.Generation.Utility.PerformanceUtility;
-import com.devotedworker.Generation.plugin.DevDungeon;
+import com.devotedworker.plugin.DevDungeon;
 
 import javax.imageio.ImageIO;
 import java.io.File;

@@ -100,6 +100,7 @@ public class DungeonDisplay {
                 g.fillRect(baseX + (pixelRoomSize-2),baseY + (pixelRoomSize-1),2,1);
                 break;
         }
+
         switch(room.getRoomOrientation().getConnectWest())
         {
             case WALL:
@@ -109,6 +110,23 @@ public class DungeonDisplay {
                 g.fillRect(baseX,baseY,1,2);
                 g.fillRect(baseX,baseY + (pixelRoomSize-2),1,2);
                 break;
+        }
+
+
+        if(room.getRoomOrientation().getConnectUp().isOpen())
+        {
+            g.setPaint(Color.BLACK);
+            g.fillRect(baseX + 2,baseY + 2,1,1);
+            g.setPaint(Color.PINK);
+            g.fillRect(baseX + 2,baseY + 1,1,1);
+        }
+
+        if(room.getRoomOrientation().getConnectDown().isOpen())
+        {
+            g.setPaint(Color.BLACK);
+            g.fillRect(baseX + 2,baseY + 2,1,1);
+            g.setPaint(Color.MAGENTA);
+            g.fillRect(baseX + 2,baseY + 3,1,1);
         }
     }
 }

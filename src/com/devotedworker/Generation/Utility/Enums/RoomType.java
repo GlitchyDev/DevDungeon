@@ -26,8 +26,9 @@ public enum RoomType {
     DEFAULT(new Color(1.0f,1.0f,0.0f,1.0f)),
     HALLWAY(new Color(1.0f,0.0f,0.0f,1.0f)),
     BIGROOM(new Color(0.0f,1.0f,0.0f,1.0f)),
-    SPAWNROOM(new Color(0.0f,1.0f,0.0f,1.0f)),
-    HIDDENROOM(new Color(0.0f,1.0f,0.0f,1.0f));
+    TREASUREROOM(new Color(0.5f,0.0f,1.0f,1.0f)),
+    DEBUGROOM(new Color(0.0f,0.0f,0.0f,1.0f));
+
 
 
 

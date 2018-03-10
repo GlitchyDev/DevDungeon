@@ -19,7 +19,14 @@ public abstract class AbstractRoomGenerator {
 
     abstract public void geneneratorActions(DungeonGenerationMap generationMap, HashMap<GeneratorType,AbstractRoomGenerator> generators, GenAction genAction, Random random);
 
-    public static boolean canGenerateStructure(int width, int length, int height, int x, int z, int y, DungeonGenerationMap dungeonGenerationMap)
+
+    public void createRoom(DungeonGenerationMap generationMap, RoomLocation roomLocation, AbstractRoom room)
+    {
+        createdRooms.add(room);
+        generationMap.setRooms(roomLocation,room);
+    }
+
+    public boolean canGenerateStructure(int width, int length, int height, int x, int z, int y, DungeonGenerationMap dungeonGenerationMap)
     {
         for(int x1 = x; x1 < x+width; x1++)
         {
