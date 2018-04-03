@@ -1,7 +1,7 @@
-name: DevotedDungeon
+name: DevDungeon
 version: 0.1
 author: Devotedworker
-main: com.devotedworker.Old.plugin.DevDungeon
+main: com.devotedworker.plugin.DevDungeon
 commands:
   generate:
     description: Generatesa a DungeonGenerationMap Generators map from the current DungeonAlgorithum

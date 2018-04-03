@@ -125,7 +125,7 @@ public class StoneHallwayGenerator extends AbstractRoomGenerator {
                         {
                             for(RoomDirection roomDirection: RoomDirection.getFloorRoomDirections())
                             {
-                                if(hallwayRoom.getRoomOrientation().getDirectionConnection(roomDirection) == RoomConnection.ENTRANCE)
+                                if(hallwayRoom != null && hallwayRoom.getRoomOrientation().getDirectionConnection(roomDirection) == RoomConnection.ENTRANCE)
                                 {
                                     if(generationMap.getRoom(hallwayRoom.getRoomLocation().getDirectionLocation(roomDirection)).getRoomType() == RoomType.HALLWAY) {
                                         HallwayRoom soleConnection = (HallwayRoom) generationMap.getRoom(hallwayRoom.getRoomLocation().getDirectionLocation(roomDirection));
@@ -142,6 +142,21 @@ public class StoneHallwayGenerator extends AbstractRoomGenerator {
                     }
                     createdRooms.removeAll(removedRooms);
                     removedRooms.clear();
+                }
+
+                for(AbstractRoom room : createdRooms) {
+                    int connections = 0;
+                    for (RoomDirection roomDirection : RoomDirection.getFloorRoomDirections())
+                    {
+                        if(room.getRoomOrientation().getDirectionConnection(roomDirection).isOpen())
+                        {
+                            connections++;
+                        }
+                    }
+                    if(connections == 0)
+                    {
+                        generationMap.setRooms(room.getRoomLocation(),null);
+                    }
                 }
 
                 PerformanceUtility.endLogging("HallwayPruning");

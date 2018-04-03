@@ -1,10 +1,17 @@
 package com.devotedworker.plugin;
 
 
+import com.devotedworker.FileIO.GenerationMapImageIO;
 import com.devotedworker.FileIO.SchematicLoader;
+import com.devotedworker.Generation.Building.DungeonBuilder;
+import com.devotedworker.Generation.DungeonGenerator;
+import com.devotedworker.Generation.DungeonTemplate;
+import com.sk89q.worldedit.EditSession;
+import com.sk89q.worldedit.bukkit.WorldEditPlugin;
+import com.sk89q.worldedit.world.World;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.World;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -28,10 +35,6 @@ public class DevDungeon extends JavaPlugin {
         config.addDefault("DefaultWorld", "world");
         config.options().copyDefaults(true);
         saveConfig();
-
-        // Load Schematics
-
-
         SchematicLoader.loadSchematics();
 
     }
@@ -47,50 +50,36 @@ public class DevDungeon extends JavaPlugin {
         boolean isPlayer = sender instanceof Player;
 
         if (command.getName().equals("generate")) {
+            DungeonGenerator dungeonGenerator = new DungeonGenerator();
+            dungeonGenerator.generate(DungeonTemplate.STONE_DUNGEON,5,5,2);
+            GenerationMapImageIO.writeGenerationMapToFile(dungeonGenerator.getDungeonGenerationMap(),false);
 
-            if(args.length == 6)
+            DevDungeon.log("Beginning Dungeon Generation");
+            DungeonBuilder dungeonBuilder = new DungeonBuilder(dungeonGenerator.getDungeonGenerationMap());
+
+            Location location;
+            if(isPlayer)
             {
-                Random random = new Random(Long.valueOf(args[4]));
-                //Dungeon dungeon = new Dungeon(Integer.valueOf(args[0]), Integer.valueOf(args[1]), Integer.valueOf(args[2]), random);
-
-
-                if(args[3].toUpperCase().contains("T"))
-                {
-                    // Pass to a builder
-                    World world;
-                    Location location;
-                    if(isPlayer)
-                    {
-                        Player player = (Player) sender;
-                        location = player.getLocation().add(0,0,0);
-                    }
-                    else
-                    {
-                        world = Bukkit.getWorld((String) config.get("defaultWorld"));
-                        location = new Location(world,0,0,0);
-
-                    }
-
-
-                    //DungeonBuild.buildDungeon(dungeon, random, location,Integer.valueOf(args[5]));
-
-
-                }
-                else
-                {
-                    //GenerationMapImageIO.writeGenerationMapToFile(dungeon,true);
-                }
-
+                location = ((Player) sender).getLocation();
             }
             else {
-                if(isPlayer) {
-                    sender.sendMessage("Not enough arguments to generate");
-                }
-                else
+                location = DevDungeon.instance.getServer().getWorlds().get(0).getSpawnLocation();
+            }
+
+            WorldEditPlugin we = (WorldEditPlugin) Bukkit.getPluginManager().getPlugin("WorldEdit");
+            World weWorld = null;
+            for(World world: we.getWorldEdit().getServer().getWorlds())
+            {
+                if(world.getName().equals(location.getWorld().getName()))
                 {
-                    getLogger().info("Not enough arguments to generate");
+                    DevDungeon.log("Obtained Correct World");
+                    weWorld = world;
                 }
             }
+            final EditSession buildSession = we.getWorldEdit().getEditSessionFactory().getEditSession(weWorld,Integer.MAX_VALUE);
+
+
+            dungeonBuilder.build(location,buildSession);
 
         }
 
@@ -105,9 +94,13 @@ public class DevDungeon extends JavaPlugin {
 
     public static void log(String string)
     {
-        System.out.println(string);
+
         if(instance != null) {
             instance.getLogger().info(string);
+        }
+        else
+        {
+            System.out.println(string);
         }
     }
 
