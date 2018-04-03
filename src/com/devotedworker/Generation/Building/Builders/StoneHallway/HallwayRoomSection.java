@@ -8,5 +8,16 @@ public enum HallwayRoomSection {
     UNUSUED;
 
 
+    public boolean isSolid()
+    {
+        switch(this)
+        {
+            case WALL:
+            case UNUSUED:
+                return true;
+        }
+        return false;
+    }
+
 
 }

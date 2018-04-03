@@ -7,6 +7,9 @@ import com.devotedworker.Generation.DungeonGenerationMap;
 import com.devotedworker.Generation.Rooms.AbstractRoom;
 import com.devotedworker.Generation.Rooms.HallwayRoom;
 import com.devotedworker.Generation.Utility.Enums.RoomDirection;
+import com.devotedworker.Generation.Utility.Enums.RoomType;
+import com.devotedworker.Generation.Utility.RoomLocation;
+import com.devotedworker.plugin.DevDungeon;
 import com.sk89q.worldedit.EditSession;
 import org.bukkit.Location;
 
@@ -59,7 +62,7 @@ public class StoneHallwayBuilder extends AbstractRoomBuilder {
                            // ArrayList<RoomDirection> directions = RoomDirection.getFloorRoomDirections().remove(roomSection.getTouchingSectionDirections())
                             for(RoomSection touchingSections: roomSection.getTouchingSections())
                             {
-                                if(roomData.get(room).getRoomData().get(touchingSections) != HallwayRoomSection.WALL) {
+                                if(!roomData.get(room).getRoomData().get(touchingSections).isSolid()) {
                                     if (touchingSections == RoomSection.CENTER_SECTION) {
                                         pasteSchematic("Large_Engraved_Upper_Wall", editSession, adjustedLocation, roomSection.getFacingDirection(touchingSections).reverse().getRotation());
                                     } else {
@@ -69,68 +72,58 @@ public class StoneHallwayBuilder extends AbstractRoomBuilder {
                                 }
                             }
                             break;
+                        case ADDEDPATH:
+
+                            pasteSchematic("Structure_Support", editSession,adjustedLocation,roomSection.getEquivalent().getRotation());
+                            pasteSchematic("Floor", editSession,adjustedLocation,random.nextInt(4) * 90);
+                            pasteSchematic("Full_Ceiling", editSession,adjustedLocation,random.nextInt(4) * 90);
+
+
+                            ArrayList<RoomDirection> notFacingDirections = RoomDirection.getFloorRoomDirections();
+                            notFacingDirections.removeAll(roomSection.getTouchingSectionDirections());
+
+                            for(RoomSection touchingSections: roomSection.getTouchingSections())
+                            {
+                                if (touchingSections == RoomSection.CENTER_SECTION) {
+                                    pasteSchematic("Large_Engraved_Upper_Wall", editSession, adjustedLocation, roomSection.getFacingDirection(touchingSections).reverse().getRotation());
+                                } else {
+                                    pasteSchematic("Engraved_Upper_Wall", editSession, adjustedLocation, roomSection.getFacingDirection(touchingSections).reverse().getRotation());
+                                }
+                                if(roomData.get(room).getRoomData().get(touchingSections).isSolid()) {
+                                    pasteSchematic("Lower_Wall_Engraved", editSession, adjustedLocation, roomSection.getFacingDirection(touchingSections).reverse().getRotation());
+                                }
+                            }
+
+
+                            for(RoomDirection nonTouchingSection: notFacingDirections)
+                            {
+                                if(getDirectionalRoomSection(dungeonGenerationMap,room.getRoomLocation(),nonTouchingSection,roomSection).isSolid() || !room.getRoomOrientation().getDirectionConnection(nonTouchingSection).isOpen()) {
+                                    pasteSchematic("Plain_Upper_Wall", editSession, adjustedLocation, nonTouchingSection.reverse().getRotation());
+                                    pasteSchematic("Lower_Wall_Plain", editSession, adjustedLocation, nonTouchingSection.reverse().getRotation());
+                                }
+                            }
+                            break;
                         case UNUSUED:
                             pasteSchematic("Complete_Stone_Core", editSession, adjustedLocation, 0);
-
-                            break;
-                    }
-
-
-                }
-                /*
-                pasteSchematic("Floor",editSession,location,random.nextInt(4) * 90);
-                pasteSchematic("Upper_Engraving",editSession,location,random.nextInt(4) * 90);
-                pasteSchematic("Full_Ceiling",editSession,location,random.nextInt(4) * 90);
-
-                for(RoomSection roomSection: RoomSection.getAllNonCenter())
-                {
-                    Location adjustedLocation = roomSection.getLocationOffset(location);
-
-                    switch(roomData.get(room).getRoomData().get(roomSection))
-                    {
-                        case WALL:
-                            pasteSchematic("Complete_Stone_Core",editSession,adjustedLocation,random.nextInt(4) * 90);
-                            pasteSchematic("Structure_Support",editSession,adjustedLocation,roomSection.getEquivalent().getRotation());
-
-                            if(roomSection.isCarnal())
-                            {
-                                pasteSchematic("Large_Engraved_Upper_Wall", editSession, adjustedLocation, roomSection.getEquivalent().getRotation());
-                                pasteSchematic("Lower_Wall_Engraved", editSession,adjustedLocation, roomSection.getEquivalent().getRotation());
-
-                            }
-
-
-
-                            if(roomData.get(room).getRoomData().get(roomSection.getTouchingSections()[0]) == HallwayRoomSection.ORIGINALPATH)
-                            {
-                                pasteSchematic("Engraved_Upper_Wall", editSession, adjustedLocation, roomSection.getEquivalent().getRotation());
-                                pasteSchematic("Lower_Wall_Engraved", editSession,adjustedLocation, roomSection.getEquivalent().getRotation());
-                            }
-                            if(roomData.get(room).getRoomData().get(roomSection.getTouchingSections()[1]) == HallwayRoomSection.ORIGINALPATH)
-                            {
-                                pasteSchematic("Engraved_Upper_Wall", editSession, adjustedLocation, roomSection.getEquivalent().reverse().getRotation());
-                                pasteSchematic("Lower_Wall_Engraved", editSession,adjustedLocation, roomSection.getEquivalent().reverse().getRotation());
-                            }
-
-
-                            break;
-                        case ORIGINALPATH:
-                            pasteSchematic("Floor",editSession,adjustedLocation,random.nextInt(4) * 90);
-                            pasteSchematic("Hallway_Support_Connector",editSession,adjustedLocation,roomSection.getEquivalent().getRotation());
-                            pasteSchematic("Full_Ceiling",editSession,adjustedLocation,0);
-
-                            break;
-                        case ADDEDPATH:
                             break;
                     }
                 }
-
-               */
-
-
                 break;
         }
-
-        // 9 quadrants,
     }
+
+    public HallwayRoomSection getDirectionalRoomSection(DungeonGenerationMap dungeonGenerationMap, RoomLocation roomLocation, RoomDirection roomDirection, RoomSection roomSection)
+    {
+        if(dungeonGenerationMap.doesRoomExist(roomLocation.getDirectionLocation(roomDirection))) {
+            if (!dungeonGenerationMap.isRoomNull(roomLocation.getDirectionLocation(roomDirection))) {
+                if (dungeonGenerationMap.getRoom(roomLocation.getDirectionLocation(roomDirection)).getRoomType() == RoomType.HALLWAY) {
+                    return roomData.get(dungeonGenerationMap.getRoom(roomLocation.getDirectionLocation(roomDirection))).getRoomData().get(roomSection.getReverse(roomDirection));
+                }
+            }
+        }
+        return HallwayRoomSection.WALL;
+    }
+
+
+
 }

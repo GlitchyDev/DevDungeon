@@ -46,6 +46,55 @@ public enum RoomSection {
         }
     }
 
+    public RoomSection getReverse(RoomDirection direction)
+    {
+        switch(direction)
+        {
+            case NORTH:
+            case SOUTH:
+                switch(this)
+                {
+                    case NORTH_SECTION:
+                        return SOUTH_SECTION;
+                    case SOUTH_SECTION:
+                        return NORTH_SECTION;
+                    case NORTHEAST_SECTION:
+                        return SOUTHEAST_SECTION;
+                    case NORTHWEST_SECTION:
+                        return SOUTHWEST_SECTION;
+                    case SOUTHEAST_SECTION:
+                        return NORTHEAST_SECTION;
+                    case SOUTHWEST_SECTION:
+                        return NORTHWEST_SECTION;
+                    default:
+                        return this;
+                }
+            case EAST:
+            case WEST:
+                switch(this)
+                {
+
+                    case EAST_SECTION:
+                        return WEST_SECTION;
+                    case WEST_SECTION:
+                        return EAST_SECTION;
+                    case NORTHEAST_SECTION:
+                        return NORTHWEST_SECTION;
+                    case NORTHWEST_SECTION:
+                        return NORTHEAST_SECTION;
+                    case SOUTHEAST_SECTION:
+                        return SOUTHWEST_SECTION;
+                    case SOUTHWEST_SECTION:
+                        return SOUTHEAST_SECTION;
+                    default:
+                        return this;
+                }
+            default:
+                return this;
+        }
+
+    }
+
     public static RoomSection getEquivalent(RoomDirection roomDirection)
     {
         switch(roomDirection)
