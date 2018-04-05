@@ -46,7 +46,7 @@ public class StoneHallwayGenerator extends AbstractRoomGenerator {
                             if(generationMap.getRoom(new RoomLocation(x,z,y)) == null || generationMap.getRoom(new RoomLocation(x,z,y)).getRoomType() == RoomType.HALLWAY) {
                                 RoomLocation location = new RoomLocation(x,z,y);
 
-                                generationMap.setRooms(location, new HallwayRoom(location,roomID));
+                                generationMap.setRoom(location, new HallwayRoom(location,roomID));
                                 generatedHallwayRooms.add((HallwayRoom) generationMap.getRoom(location));
                                 createdRooms.add(generationMap.getRoom(location));
 
@@ -91,7 +91,7 @@ public class StoneHallwayGenerator extends AbstractRoomGenerator {
                     }
                     for(HallwayRoom room: roomTrees.get(currentID))
                     {
-                        generationMap.setRooms(room.getRoomLocation(),new DebugRoom(room.getRoomLocation()));
+                        generationMap.setRoom(room.getRoomLocation(),new DebugRoom(room.getRoomLocation()));
                     }
                     roomTrees.remove(currentID);
                 }
@@ -131,7 +131,7 @@ public class StoneHallwayGenerator extends AbstractRoomGenerator {
                                         HallwayRoom soleConnection = (HallwayRoom) generationMap.getRoom(hallwayRoom.getRoomLocation().getDirectionLocation(roomDirection));
                                         soleConnection.getRoomOrientation().setDirectionConnection(roomDirection.reverse(), RoomConnection.WALL);
 
-                                        generationMap.setRooms(hallwayRoom.getRoomLocation(), null);
+                                        generationMap.setRoom(hallwayRoom.getRoomLocation(), null);
                                         removedRooms.add(room);
                                     }
                                 }
@@ -155,7 +155,7 @@ public class StoneHallwayGenerator extends AbstractRoomGenerator {
                     }
                     if(connections == 0)
                     {
-                        generationMap.setRooms(room.getRoomLocation(),null);
+                        generationMap.setRoom(room.getRoomLocation(),null);
                     }
                 }
 

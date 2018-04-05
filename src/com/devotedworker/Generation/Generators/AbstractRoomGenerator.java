@@ -23,7 +23,7 @@ public abstract class AbstractRoomGenerator {
     public void createRoom(DungeonGenerationMap generationMap, RoomLocation roomLocation, AbstractRoom room)
     {
         createdRooms.add(room);
-        generationMap.setRooms(roomLocation,room);
+        generationMap.setRoom(roomLocation,room);
     }
 
     public boolean canGenerateStructure(int width, int length, int height, int x, int z, int y, DungeonGenerationMap dungeonGenerationMap)

@@ -40,6 +40,23 @@ public class HallwayRoomMetaData {
             }
         }
 
+        for(RoomSection roomSection: RoomSection.getAllNonCenter())
+        {
+            if(roomData.get(roomSection) == HallwayRoomSection.ADDEDPATH) {
+                int connections = 0;
+                for (RoomSection roomSection1 : roomSection.getTouchingSections()) {
+                    if (roomSection1 != RoomSection.CENTER_SECTION) {
+                        if (roomData.get(roomSection1) == HallwayRoomSection.ADDEDPATH) {
+                            connections++;
+                        }
+                    }
+                }
+                if (connections == 0) {
+                    roomData.put(roomSection, HallwayRoomSection.WALL);
+                }
+            }
+        }
+
     }
 
     public HashMap<RoomSection,HallwayRoomSection> getRoomData()

@@ -3,6 +3,7 @@ package com.devotedworker.Generation.Generators;
 import com.devotedworker.Generation.DungeonGenerationMap;
 import com.devotedworker.Generation.GenAction;
 import com.devotedworker.Generation.Rooms.BigRoom;
+import com.devotedworker.Generation.Rooms.HallwayRoom;
 import com.devotedworker.Generation.Utility.Enums.RoomConnection;
 import com.devotedworker.Generation.Utility.Enums.RoomDirection;
 import com.devotedworker.Generation.Utility.Enums.RoomType;
@@ -59,7 +60,78 @@ public class StoneBigRoomGenerator extends AbstractRoomGenerator {
                 PerformanceUtility.endLogging("BigRoomPlaceTime");
                 DevDungeon.log("BigRoomGen: Placing time: " + PerformanceUtility.getTimings("BigRoomPlaceTime"));
                 break;
+
+
             case FStoneBigRoom:
+
+                DevDungeon.log("BigRoomFix: Fixing Rooms to connect to Hallways");
+
+                for(int i = 0; i < createdRooms.size()/8.0; i++) {
+                    ArrayList<BigRoom> structure = new ArrayList<>();
+                    for (int a = 0; a < 8; a++) {
+                        if (i != 0) {
+                            structure.add((BigRoom) createdRooms.get(i * 8 + a));
+                        } else {
+                            structure.add((BigRoom) createdRooms.get(a));
+
+                        }
+                    }
+
+                    int hallwayCount = 0;
+                    HashMap<BigRoom, ArrayList<RoomDirection>> connectedHallways = new HashMap<>();
+                    for (BigRoom bigRoom : structure) {
+                        for (RoomDirection roomDirection : RoomDirection.getFloorRoomDirections()) {
+                            if (bigRoom.getRoomOrientation().getDirectionConnection(roomDirection) == RoomConnection.WALL) {
+                                if (generationMap.doesRoomExist(bigRoom.getRoomLocation().getDirectionLocation(roomDirection))) {
+                                    if (!generationMap.isRoomNull(bigRoom.getRoomLocation().getDirectionLocation(roomDirection))) {
+                                        if (generationMap.getRoom(bigRoom.getRoomLocation().getDirectionLocation(roomDirection)).getRoomType() == RoomType.HALLWAY) {
+
+                                            if (!connectedHallways.containsKey(bigRoom)) {
+                                                connectedHallways.put(bigRoom, new ArrayList<RoomDirection>());
+                                            }
+                                            connectedHallways.get(bigRoom).add(roomDirection);
+                                            hallwayCount++;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (hallwayCount != 0) {
+                        int minimumConnections = 2;
+                        int rangeConnections = 8;
+                        int suggestedConnections = minimumConnections + random.nextInt(rangeConnections + 1);
+                        if (hallwayCount < suggestedConnections) {
+                            suggestedConnections = hallwayCount;
+                        }
+
+                        for (int a = 0; a < suggestedConnections; a++) {
+                            BigRoom bigRoom = (BigRoom) connectedHallways.keySet().toArray()[random.nextInt(connectedHallways.keySet().size())];
+                            RoomDirection roomDirection = connectedHallways.get(bigRoom).get(random.nextInt(connectedHallways.get(bigRoom).size()));
+
+                            bigRoom.getRoomOrientation().setDirectionConnection(roomDirection, RoomConnection.ENTRANCE);
+                            HallwayRoom hallwayRoom = (HallwayRoom) generationMap.getRoom(bigRoom.getRoomLocation().getDirectionLocation(roomDirection));
+                            hallwayRoom.getRoomOrientation().setDirectionConnection(roomDirection.reverse(), RoomConnection.ENTRANCE);
+
+                            connectedHallways.get(bigRoom).remove(roomDirection);
+                            if (connectedHallways.get(bigRoom).size() == 0) {
+                                connectedHallways.remove(bigRoom);
+                            }
+                        }
+
+
+                    }
+                    else
+                    {
+                        for (BigRoom bigRoom : structure) {
+                            generationMap.setRoom(bigRoom.getRoomLocation(),null);
+                        }
+                    }
+                }
+
+
+                /*
                 DevDungeon.log("BigRoomFix: Fixing Rooms to connect to Hallways");
                 PerformanceUtility.startLogging("BigRoomFixTime");
                 for(int i = 0; i < createdRooms.size()/8.0; i++)
@@ -92,6 +164,12 @@ public class StoneBigRoomGenerator extends AbstractRoomGenerator {
                             }
                         }
                     }
+
+
+                    ArrayList<HashMap<BigRoom,RoomDirection>> connections = new ArrayList<>();
+                    for()
+
+
                     final int minimumOpening = 2;
                     final int range = 8;
                     for(int x = 0; x < minimumOpening + random.nextInt(range + 1); x++)
@@ -128,7 +206,7 @@ public class StoneBigRoomGenerator extends AbstractRoomGenerator {
                     {
                         for(BigRoom bigRoom: structure)
                         {
-                            generationMap.setRooms(bigRoom.getRoomLocation(),null);
+                            generationMap.setRoom(bigRoom.getRoomLocation(),null);
                         }
                     }
 
@@ -140,6 +218,7 @@ public class StoneBigRoomGenerator extends AbstractRoomGenerator {
                 // Grab list of rooms
 
                 break;
+                */
         }
 
     }

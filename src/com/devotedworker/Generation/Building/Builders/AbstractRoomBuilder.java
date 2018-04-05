@@ -34,10 +34,10 @@ public abstract class AbstractRoomBuilder {
         return new Vector(location.getX(), location.getY(), location.getZ());
     }
 
-    public static void pasteSchematic(String schematicName, EditSession buildSession, Location location, int rotation) {
-        DevDungeon.log("Attempting Paste! " + SchematicLoader.getSchematic(schematicName).toString());
+    public static void pasteSchematic(String schematicName, EditSession buildSession, Random random, Location location, int rotation) {
+        DevDungeon.log("Attempting Paste! " + SchematicLoader.getSchematic(schematicName,random).toString());
         try {
-            ClipboardReader reader = ClipboardFormat.SCHEMATIC.getReader(new FileInputStream(SchematicLoader.getSchematic(schematicName)));
+            ClipboardReader reader = ClipboardFormat.SCHEMATIC.getReader(new FileInputStream(SchematicLoader.getSchematic(schematicName,random)));
 
             WorldData worldData = buildSession.getWorld().getWorldData();
             Clipboard clipboard = reader.read(worldData);
@@ -65,10 +65,10 @@ public abstract class AbstractRoomBuilder {
         }
     }
 
-    public static void pasteSchematicWithAir(String schematicName, EditSession buildSession, Location location, int rotation) {
-        DevDungeon.log("Attempting Paste! " + SchematicLoader.getSchematic(schematicName).toString());
+    public static void pasteSchematicWithAir(String schematicName, EditSession buildSession, Random random, Location location, int rotation) {
+        DevDungeon.log("Attempting Paste! " + SchematicLoader.getSchematic(schematicName,random).toString());
         try {
-            ClipboardReader reader = ClipboardFormat.SCHEMATIC.getReader(new FileInputStream(SchematicLoader.getSchematic(schematicName)));
+            ClipboardReader reader = ClipboardFormat.SCHEMATIC.getReader(new FileInputStream(SchematicLoader.getSchematic(schematicName,random)));
 
 
             if(reader == null)

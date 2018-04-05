@@ -22,7 +22,7 @@ public class DungeonGenerationMap {
         return rooms[location.getX()][location.getZ()][location.getY()];
     }
 
-    public void setRooms(RoomLocation location, AbstractRoom room)
+    public void setRoom(RoomLocation location, AbstractRoom room)
     {
         rooms[location.getX()][location.getZ()][location.getY()] = room;
         if(room != null && !utilizedRooms.contains(room.getRoomType()))
