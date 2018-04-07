@@ -1,13 +1,12 @@
 package com.devotedworker.Generation.Rooms;
 
 
-import com.devotedworker.Generation.DungeonGenerationMap;
 import com.devotedworker.Generation.Utility.Enums.RoomConnection;
 import com.devotedworker.Generation.Utility.Enums.RoomType;
 import com.devotedworker.Generation.Utility.RoomLocation;
 
 public class BigRoom extends AbstractRoom {
-
+    private final int roomPos;
 
     public BigRoom(RoomLocation roomLocation, int roomPos) {
         super(roomLocation);
@@ -56,6 +55,15 @@ public class BigRoom extends AbstractRoom {
                 roomOrientation.setConnectDown(RoomConnection.NONE);
                 break;
         }
+        this.roomPos = roomPos;
     }
 
+    public int getRoomPos() {
+        return roomPos;
+    }
+
+    public boolean isTopRoom()
+    {
+        return roomPos > 3;
+    }
 }

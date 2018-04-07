@@ -56,7 +56,7 @@ public class DungeonBuilder {
             for (int y = 0; y < dungeonGenerationMap.getHeight(); y++) {
                 for (int x = 0; x < dungeonGenerationMap.getWidth(); x++) {
                     for (int z = 0; z < dungeonGenerationMap.getLength(); z++) {
-                        Location roomCenter = dungeonLocation.clone().add(x * roomWidth, (dungeonGenerationMap.getHeight() - y) * roomHeight, z * roomWidth);
+                        Location roomCenter = dungeonLocation.clone().add(x * roomWidth, (y) * roomHeight, z * roomWidth);
                         if(!dungeonGenerationMap.isRoomNull(new RoomLocation(x, z, y))) {
                             AbstractRoom room = dungeonGenerationMap.getRoom(new RoomLocation(x, z, y));
 

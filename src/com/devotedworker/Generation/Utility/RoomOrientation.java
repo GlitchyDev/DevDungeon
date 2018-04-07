@@ -15,7 +15,6 @@ public class RoomOrientation {
     private RoomConnection connectWest;
     private RoomConnection connectUp;
     private RoomConnection connectDown;
-    private ArrayList<RoomLocation> customConnections;
 
     public RoomOrientation()
     {
@@ -25,7 +24,6 @@ public class RoomOrientation {
         this.connectWest = RoomConnection.WALL;
         this.connectUp = RoomConnection.WALL;
         this.connectDown = RoomConnection.WALL;
-        customConnections = new ArrayList<>();
     }
 
 
@@ -131,7 +129,4 @@ public class RoomOrientation {
         this.connectDown = connectDown;
     }
 
-    public ArrayList<RoomLocation> getCustomConnections() {
-        return customConnections;
-    }
 }

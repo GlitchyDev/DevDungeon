@@ -265,6 +265,13 @@ public enum RoomSection {
         return directions;
     }
 
+    public ArrayList<RoomDirection> getNonTouchingDirections()
+    {
+        ArrayList<RoomDirection> result = RoomDirection.getFloorRoomDirections();
+        result.remove(this.getTouchingSectionDirections());
+        return result;
+    }
+
 
     public static RoomSection[] getAllNonCenter()
     {
@@ -281,6 +288,22 @@ public enum RoomSection {
     {
         return new RoomSection[]{NORTHEAST_SECTION,SOUTHEAST_SECTION,SOUTHWEST_SECTION,NORTHWEST_SECTION};
 
+    }
+
+    public static RoomSection[] getDirectionalSections(RoomDirection roomDirection)
+    {
+        switch(roomDirection)
+        {
+            case NORTH:
+                return new RoomSection[]{NORTHEAST_SECTION,NORTH_SECTION,NORTHWEST_SECTION};
+            case EAST:
+                return new RoomSection[]{NORTHWEST_SECTION,WEST_SECTION,SOUTHWEST_SECTION};
+            case SOUTH:
+                return new RoomSection[]{SOUTHWEST_SECTION,SOUTH_SECTION,SOUTHEAST_SECTION};
+            case WEST:
+                return new RoomSection[]{SOUTHEAST_SECTION,WEST_SECTION,NORTHWEST_SECTION};
+        }
+        return new RoomSection[]{};
     }
 
 
