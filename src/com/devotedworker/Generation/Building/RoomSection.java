@@ -295,13 +295,13 @@ public enum RoomSection {
         switch(roomDirection)
         {
             case NORTH:
-                return new RoomSection[]{NORTHEAST_SECTION,NORTH_SECTION,NORTHWEST_SECTION};
+                return new RoomSection[]{NORTHWEST_SECTION,NORTH_SECTION,NORTHEAST_SECTION};
             case EAST:
-                return new RoomSection[]{NORTHWEST_SECTION,WEST_SECTION,SOUTHWEST_SECTION};
+                return new RoomSection[]{NORTHEAST_SECTION,EAST_SECTION,SOUTHEAST_SECTION};
             case SOUTH:
                 return new RoomSection[]{SOUTHWEST_SECTION,SOUTH_SECTION,SOUTHEAST_SECTION};
             case WEST:
-                return new RoomSection[]{SOUTHEAST_SECTION,WEST_SECTION,NORTHWEST_SECTION};
+                return new RoomSection[]{SOUTHWEST_SECTION,WEST_SECTION,NORTHWEST_SECTION};
         }
         return new RoomSection[]{};
     }

@@ -81,11 +81,12 @@ public class StoneHallwayBuilder extends AbstractRoomBuilder {
                 }
                 break;
             case BUILD:
-                pasteSchematic("SubFloor",editSession,random,location,random.nextInt(4) * 90);
+                if(room.getRoomLocation().getY() == 0 || (dungeonGenerationMap.doesRoomExist(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN))&& dungeonGenerationMap.isRoomNull(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)))) {
+                    pasteSchematic("SubFloor", editSession, random, location, random.nextInt(4) * 90);
+                }
                 pasteSchematic("Floor",editSession,random,location,random.nextInt(4) * 90);
                 pasteSchematic("Ceiling_Engraving",editSession,random,location,random.nextInt(4) * 90);
                 pasteSchematic("Ceiling",editSession,random,location,random.nextInt(4) * 90);
-
 
                 // Do everything else
                 for(RoomSection roomSection: RoomSection.getAllNonCenter())
@@ -100,7 +101,15 @@ public class StoneHallwayBuilder extends AbstractRoomBuilder {
                                 pasteSchematic("SubFloor", editSession, random, adjustedLocation, random.nextInt(4) * 90);
                             }
                             pasteSchematic("Floor",editSession,random,adjustedLocation,random.nextInt(4) * 90);
-                            pasteSchematic("Hallway_Support",editSession,random,adjustedLocation,roomSection.getEquivalent().getRotation());
+                            switch(dungeonGenerationMap.getRoom(room.getRoomLocation().getDirectionLocation(roomSection.getEquivalent())).getRoomType())
+                            {
+                                case HALLWAY:
+                                    pasteSchematic("Hallway_Support",editSession,random,adjustedLocation,roomSection.getEquivalent().getRotation());
+                                    break;
+                                case BIGROOM:
+                                    pasteSchematic("BigRoom_Support",editSession,random,adjustedLocation,roomSection.getEquivalent().getRotation());
+                                    break;
+                            }
                             pasteSchematic("Ceiling",editSession,random,adjustedLocation,0);
                             break;
                         case WALL:
@@ -117,18 +126,25 @@ public class StoneHallwayBuilder extends AbstractRoomBuilder {
                                 {
                                     pasteSchematicWithAir("Engraved_Lower_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
                                 }
+
                                 if(touchingSection == RoomSection.CENTER_SECTION)
                                 {
                                     pasteSchematic("Large_Engraved_Upper_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
                                 }
                                 else
                                 {
-                                    pasteSchematic("Engraved_Upper_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                    if(roomData.get(room).get(touchingSection) != HallwayRoomSection.WALL && roomData.get(room).get(touchingSection) != HallwayRoomSection.ADDEDPATH) {
+                                        pasteSchematic("Engraved_Upper_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                    }
+                                    else
+                                    {
+                                        pasteSchematic("Plain_Upper_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                    }
                                 }
                             }
                             break;
                         case ADDEDPATH:
-                            if(room.getRoomLocation().getY() == 0 || (dungeonGenerationMap.doesRoomExist(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN))&& dungeonGenerationMap.isRoomNull(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)))) {
+                            if(room.getRoomLocation().getY() == 0 || (dungeonGenerationMap.doesRoomExist(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)) && dungeonGenerationMap.isRoomNull(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)))) {
                                 pasteSchematic("SubFloor", editSession, random, adjustedLocation, random.nextInt(4) * 90);
                             }
                             pasteSchematic("Floor",editSession,random,adjustedLocation,random.nextInt(4) * 90);
@@ -141,13 +157,20 @@ public class StoneHallwayBuilder extends AbstractRoomBuilder {
                                 {
                                     pasteSchematic("Plain_Lower_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
                                 }
+
                                 if(touchingSection == RoomSection.CENTER_SECTION)
                                 {
                                     pasteSchematic("Large_Engraved_Upper_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
                                 }
                                 else
                                 {
-                                    pasteSchematic("Engraved_Upper_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                    if(roomData.get(room).get(touchingSection) != HallwayRoomSection.WALL && roomData.get(room).get(touchingSection) != HallwayRoomSection.ADDEDPATH) {
+                                        pasteSchematic("Engraved_Upper_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                    }
+                                    else
+                                    {
+                                        pasteSchematic("Plain_Upper_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                    }
                                 }
                             }
                             ArrayList<RoomDirection> notFacingDirections = RoomDirection.getFloorRoomDirections();

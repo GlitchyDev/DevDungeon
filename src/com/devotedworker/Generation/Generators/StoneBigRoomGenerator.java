@@ -100,7 +100,7 @@ public class StoneBigRoomGenerator extends AbstractRoomGenerator {
 
                     if (hallwayCount != 0) {
                         int minimumConnections = 2;
-                        int rangeConnections = 8;
+                        int rangeConnections = 4;
                         int suggestedConnections = minimumConnections + random.nextInt(rangeConnections + 1);
                         if (hallwayCount < suggestedConnections) {
                             suggestedConnections = hallwayCount;

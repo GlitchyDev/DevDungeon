@@ -5,4 +5,6 @@ public enum BigRoomSection {
     ENTRANCE,
     UPPER_WALKWAY,
     LADDER,
+    GROUND_FLOOR,
+    EMPTY;
 }
