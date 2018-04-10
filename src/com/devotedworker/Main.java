@@ -21,12 +21,10 @@ public class Main {
     {
 
         DungeonGenerator dungeonGenerator = new DungeonGenerator();
-        dungeonGenerator.generate(DungeonTemplate.STONE_DUNGEON,10,10,2);
+        dungeonGenerator.generate(DungeonTemplate.STONE_DUNGEON,100,100,100);
         GenerationMapImageIO.writeGenerationMapToFile(dungeonGenerator.getDungeonGenerationMap(),false);
 
-        /*
-
-        DungeonBuilder dungeonBuilder = new DungeonBuilder(dungeonGenerator.getDungeonGenerationMap());
+        /*-lder(dungeonGenerator.getDungeonGenerationMap());
         Location location = DevDungeon.instance.getServer().getWorlds().get(0).getSpawnLocation();
 
         WorldEditPlugin we = (WorldEditPlugin) Bukkit.getPluginManager().getPlugin("WorldEdit");

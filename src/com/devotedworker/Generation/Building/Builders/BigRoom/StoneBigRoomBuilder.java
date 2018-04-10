@@ -8,6 +8,7 @@ import com.devotedworker.Generation.DungeonGenerationMap;
 import com.devotedworker.Generation.Rooms.AbstractRoom;
 import com.devotedworker.Generation.Rooms.BigRoom;
 import com.devotedworker.Generation.Rooms.HallwayRoom;
+import com.devotedworker.Generation.Utility.Enums.RoomConnection;
 import com.devotedworker.Generation.Utility.Enums.RoomDirection;
 import com.sk89q.worldedit.EditSession;
 import org.bukkit.Location;
@@ -30,8 +31,7 @@ public class StoneBigRoomBuilder extends AbstractRoomBuilder {
     @Override
     public void build(DungeonGenerationMap dungeonGenerationMap, AbstractRoom room, BuildingPhase phase, Location location, Random random, EditSession editSession) {
         BigRoom primaryRoom = (BigRoom) room;
-        switch(phase)
-        {
+        switch (phase) {
             case PREBUILD:
                 if (primaryRoom.getRoomPos() == 0) {
                     completeStructure.put(primaryRoom, new ArrayList<BigRoom>());
@@ -44,7 +44,7 @@ public class StoneBigRoomBuilder extends AbstractRoomBuilder {
                     completeStructure.get(primaryRoom).add((BigRoom) dungeonGenerationMap.getRoom(primaryRoom.getRoomLocation().getUp().getSouth()));
                     completeStructure.get(primaryRoom).add((BigRoom) dungeonGenerationMap.getRoom(primaryRoom.getRoomLocation().getUp().getEast().getSouth()));
                     for (BigRoom bigRoom : completeStructure.get(primaryRoom)) {
-                        roomData.put(bigRoom,new HashMap<RoomSection,BigRoomSection>());
+                        roomData.put(bigRoom, new HashMap<RoomSection, BigRoomSection>());
                         for (RoomDirection roomDirection : RoomDirection.getFloorRoomDirections()) {
                             switch (bigRoom.getRoomOrientation().getDirectionConnection(roomDirection)) {
                                 case WALL:
@@ -60,10 +60,8 @@ public class StoneBigRoomBuilder extends AbstractRoomBuilder {
                                     break;
                             }
                         }
-                        for(RoomSection roomSection: RoomSection.values())
-                        {
-                            if(!roomData.get(bigRoom).containsKey(roomSection))
-                            {
+                        for (RoomSection roomSection : RoomSection.values()) {
+                            if (!roomData.get(bigRoom).containsKey(roomSection)) {
                                 if (bigRoom.isTopRoom()) {
                                     roomData.get(bigRoom).put(roomSection, BigRoomSection.EMPTY);
                                 } else {
@@ -72,47 +70,76 @@ public class StoneBigRoomBuilder extends AbstractRoomBuilder {
                             }
                         }
                     }
+
+                    if (completeStructure.get(primaryRoom).get(4).getRoomOrientation().getDirectionConnection(RoomDirection.NORTH) == RoomConnection.ENTRANCE || completeStructure.get(primaryRoom).get(5).getRoomOrientation().getDirectionConnection(RoomDirection.NORTH) == RoomConnection.ENTRANCE) {
+                        roomData.get(completeStructure.get(primaryRoom).get(4)).put(RoomSection.CENTER_SECTION, BigRoomSection.UPPER_WALKWAY);
+                        roomData.get(completeStructure.get(primaryRoom).get(4)).put(RoomSection.EAST_SECTION, BigRoomSection.UPPER_WALKWAY);
+                        roomData.get(completeStructure.get(primaryRoom).get(5)).put(RoomSection.CENTER_SECTION, BigRoomSection.UPPER_WALKWAY);
+                        roomData.get(completeStructure.get(primaryRoom).get(5)).put(RoomSection.WEST_SECTION, BigRoomSection.UPPER_WALKWAY);
+                    }
+
                 }
                 break;
             case BUILD:
-                for(RoomSection roomSection: RoomSection.values())
-                {
+
+                if (!((BigRoom) room).isTopRoom()) {
+                    switch (((BigRoom) room).getRoomPos()) {
+                        case 0:
+                            pasteSchematic("BigRoom_Ceiling", editSession, random, location, 0);
+                            break;
+                        case 1:
+                            pasteSchematic("BigRoom_Ceiling", editSession, random, location, 90);
+                            break;
+                        case 2:
+                            pasteSchematic("BigRoom_Ceiling", editSession, random, location, 270);
+                            break;
+                        case 3:
+                            pasteSchematic("BigRoom_Ceiling", editSession, random, location, 180);
+                            break;
+                    }
+
+                }
+
+                for (RoomSection roomSection : RoomSection.values()) {
                     Location adjustedLocation = roomSection.getLocationOffset(location);
-                    switch(roomData.get(room).get(roomSection))
-                    {
+                    switch (roomData.get(room).get(roomSection)) {
                         case ENTRANCE:
-                            if(room.getRoomLocation().getY() == 0 || (dungeonGenerationMap.doesRoomExist(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN))&& dungeonGenerationMap.isRoomNull(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)))) {
+                            if (room.getRoomLocation().getY() == 0 || (dungeonGenerationMap.doesRoomExist(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)) && dungeonGenerationMap.isRoomNull(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)))) {
                                 pasteSchematic("SubFloor", editSession, random, adjustedLocation, random.nextInt(4) * 90);
                             }
-                            pasteSchematic("Floor",editSession,random,adjustedLocation,random.nextInt(4) * 90);
-                            pasteSchematic("Ceiling",editSession,random,adjustedLocation,0);
-                            pasteSchematic("BigRoom_Support",editSession,random,adjustedLocation,roomSection.getEquivalent().getRotation());
+                            pasteSchematic("Floor", editSession, random, adjustedLocation, random.nextInt(4) * 90);
+                            pasteSchematic("BigRoom_Support", editSession, random, adjustedLocation, roomSection.getEquivalent().getRotation());
                             break;
                         case WALL:
-                            if(room.getRoomLocation().getY() == 0 || (dungeonGenerationMap.doesRoomExist(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN))&& dungeonGenerationMap.isRoomNull(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)))) {
+                            if (room.getRoomLocation().getY() == 0 || (dungeonGenerationMap.doesRoomExist(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)) && dungeonGenerationMap.isRoomNull(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)))) {
                                 pasteSchematic("SubFloor", editSession, random, adjustedLocation, random.nextInt(4) * 90);
                             }
-                            pasteSchematic("Floor",editSession,random,adjustedLocation,random.nextInt(4) * 90);
-                            pasteSchematic("Stone_Filler",editSession,random,adjustedLocation,random.nextInt(4) * 90);
-                            pasteSchematic("Support_Beam", editSession,random,adjustedLocation,roomSection.getEquivalent().getRotation());
-                            for(RoomSection touchingSection: roomSection.getTouchingSections())
-                            {
+                            pasteSchematic("Floor", editSession, random, adjustedLocation, random.nextInt(4) * 90);
+                            pasteSchematic("Stone_Filler", editSession, random, adjustedLocation, random.nextInt(4) * 90);
+                            pasteSchematic("Support_Beam", editSession, random, adjustedLocation, roomSection.getEquivalent().getRotation());
+                            for (RoomSection touchingSection : roomSection.getTouchingSections()) {
                                 RoomDirection facingDirection = roomSection.getFacingDirection(touchingSection);
-                                if(roomData.get(room).get(touchingSection) == BigRoomSection.ENTRANCE || roomData.get(room).get(touchingSection) == BigRoomSection.GROUND_FLOOR || roomData.get(room).get(touchingSection) == BigRoomSection.EMPTY || roomData.get(room).get(touchingSection) == BigRoomSection.UPPER_WALKWAY)
-                                {
-                                    pasteSchematicWithAir("Plain_Lower_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
-                                    if(((BigRoom)room).isTopRoom()) {
-                                        pasteSchematicWithAir("BigRoom_Rim", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                if (roomData.get(room).get(touchingSection) == BigRoomSection.EMPTY || roomData.get(room).get(touchingSection) == BigRoomSection.GROUND_FLOOR) {
+                                    pasteSchematicWithAir("Engraved_Lower_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                    if (((BigRoom) room).isTopRoom()) {
+                                        pasteSchematic("BigRoom_Rim", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                        pasteSchematicWithAir("BigRoom_Clear", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+
+                                    } else {
+                                        pasteSchematicWithAir("BigRoom_Panel", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
                                     }
-                                    pasteSchematicWithAir("Clear_Rubble", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                } else {
+                                    if (roomData.get(room).get(touchingSection) == BigRoomSection.ENTRANCE) {
+                                        pasteSchematicWithAir("Engraved_Lower_Wall", editSession, random, adjustedLocation, facingDirection.reverse().getRotation());
+                                    }
                                 }
                             }
                             break;
                         case GROUND_FLOOR:
-                            if(room.getRoomLocation().getY() == 0 || (dungeonGenerationMap.doesRoomExist(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN))&& dungeonGenerationMap.isRoomNull(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)))) {
+                            if (room.getRoomLocation().getY() == 0 || (dungeonGenerationMap.doesRoomExist(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)) && dungeonGenerationMap.isRoomNull(room.getRoomLocation().getDirectionLocation(RoomDirection.DOWN)))) {
                                 pasteSchematic("SubFloor", editSession, random, adjustedLocation, random.nextInt(4) * 90);
                             }
-                            pasteSchematic("Floor",editSession,random,adjustedLocation,random.nextInt(4) * 90);
+                            pasteSchematic("Floor", editSession, random, adjustedLocation, random.nextInt(4) * 90);
                             break;
                     }
 
@@ -124,7 +151,21 @@ public class StoneBigRoomBuilder extends AbstractRoomBuilder {
         }
 
 
+    }
 
+
+    public int getBigRoomRotation(int bigRoomID) {
+        switch (bigRoomID % 4) {
+            case 0:
+                return 0;
+            case 1:
+                return 90;
+            case 2:
+                return 180;
+            case 3:
+                return 270;
+        }
+        return 0;
     }
 }
 

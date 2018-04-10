@@ -60,7 +60,7 @@ public class DevDungeon extends JavaPlugin {
             Location location;
             if(isPlayer)
             {
-                location = ((Player) sender).getLocation();
+                location = ((Player) sender).getLocation().add(0,10,0);
             }
             else {
                 location = DevDungeon.instance.getServer().getWorlds().get(0).getSpawnLocation();
