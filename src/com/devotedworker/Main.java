@@ -21,7 +21,7 @@ public class Main {
     {
 
         DungeonGenerator dungeonGenerator = new DungeonGenerator();
-        dungeonGenerator.generate(DungeonTemplate.STONE_DUNGEON,100,100,100);
+        dungeonGenerator.generate(DungeonTemplate.STONE_DUNGEON,1000,5,1000);
         GenerationMapImageIO.writeGenerationMapToFile(dungeonGenerator.getDungeonGenerationMap(),false);
 
         /*-lder(dungeonGenerator.getDungeonGenerationMap());

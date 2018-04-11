@@ -252,7 +252,7 @@ public enum RoomSection {
             case NORTHWEST_SECTION:
                 return new RoomSection[]{WEST_SECTION,NORTH_SECTION};
         }
-        return new RoomSection[0];
+        return new RoomSection[]{NORTH_SECTION,EAST_SECTION,SOUTH_SECTION,WEST_SECTION};
     }
 
     public ArrayList<RoomDirection> getTouchingSectionDirections()
